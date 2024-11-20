@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #custom_ul li::marker {
+            content: '😊';
+            font-size: 1em;
+        }
+    </style>
+
+</head>
+
+<body>
+    <ul>
+        <li>ul</li>
+        <!-- ul type :: disc, circle, square -->
+        <ul type="square">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ul>
+        <br>
+
+        <li>ol</li>
+        <!-- ol type :: 1, A, a, I, i -->
+        <ol type="i">
+            <li>Coffee</li>
+            <ul>
+                <li>Espresso</li>
+                <li>Latte</li>
+                <li>Americano</li>
+            </ul>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ol>
+        <br>
+
+        <li>custom</li>
+        <ul id="custom_ul">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ul>
+        <br>
+
+        <li>dl</li>
+        <dl>
+            <dt>Coffee</dt>
+            <dd>- black drink</dd>
+            <dt>Milk</dt>
+            <dd>- white drink</dd>
+        </dl>
+    </ul>
+</body>
+
+</html>
