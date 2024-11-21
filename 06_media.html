@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>media tag</title>
+  </head>
+  <body>
+    <h1>media 관련 태그</h1>
+    <p>음악, 동영상 파일을 다루기 위한 태그</p>
+    <hr />
+    <audio controls loop>
+      <!-- loop : 반복 -->
+      <source src="./media/Kalimba.ogg" type="audio/ogg" />
+      <source src="./media/Kalimba.mp3" type="audio/mp3" />
+    </audio>
+    <br />
+    <video controls poster="./images/Strawberry.jpg" style="width: 300px">
+      <!-- controls:작동, poster 썸네일 -->
+      <source src="./media/Wildlife.mp4" type="video/mp4" />
+      <source src="./media/Wildlife.webm" type="video/webm" />
+      <!-- source = 소스 -->
+    </video>
+  </body>
+</html>

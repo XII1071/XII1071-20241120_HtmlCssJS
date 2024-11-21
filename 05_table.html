@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        table,
+        td,
+        th {
+            width: 800px;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>table 관련 태그</h1>
+    <p>표를 만들기 위한 태그</p>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    교시
+                </th>
+                <th>
+                    월
+                </th>
+                <th>
+                    화
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1교시</td>
+                <td>국어</td>
+                <td>미술</td>
+            </tr>
+            <tr>
+                <td>2교시</td>
+                <td>수학</td>
+                <td rowspan="2">체육</td>
+            </tr>
+            <tr>
+                <td>3교시</td>
+                <td>음악</td>
+                <!-- <td>정보</td> -->
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">비고</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>

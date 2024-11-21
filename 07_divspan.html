@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>div, span</title>
+    <style>
+      span {
+        background: yellow;
+        width: 100px;
+      }
+      .bl {
+        background: orange;
+        width: 100px;
+      }
+
+      table,
+      td,
+      th {
+        width: 800px;
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>영역 관련 태그</h1>
+    <p>컨텐트 만큼의 영역과 공간에 대한 영역에 대한 태그</p>
+    <hr />
+    <span>Hello</span>
+    <div class="bl">1</div>
+    <div class="bl">2</div>
+    <span>World</span>
+    <div style="background: yellowgreen; height: 100px">Header</div>
+    <div style="background: white; height: 300px">
+      <table>
+        <tr>
+          <!-- 행 -->
+          <th>block 속성의 태그 :: 공간에 대한 영역</th>
+          <!-- th: 중요한곳에 씀 (굵은굴자) -->
+          <th>inline 속성의 태그 :: 컨텐트에 대한 영역</th>
+          <!-- 내용일때 (일반 글자) -->
+        </tr>
+        <tr>
+          <td>h1~h6, p, pre, blockquote, ul, ol, li div, ...</td>
+          <td>img, a, audio, video, span, ...</td>
+        </tr>
+      </table>
+    </div>
+    <div style="background: blue; height: 50px">Footer</div>
+  </body>
+</html>
