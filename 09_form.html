@@ -17,10 +17,31 @@
       //widow 객체는 웹 브라우저 객체를 대신한다
       //onload()는 document가 읽혀지고 난 다음에 웹브라우저가 동작하는 함수
       window.onload = function () {
-        subj = document.querySelector("#subject"); //querySelector 함수 ("#subject") 객체의 기능
-        alert(subj.value); //객체의 값
+        inputBtn = document.querySelector("#inputBtn");
+        // ("inputBtn") id = inputBtn를 끌어 당겨 쓸때
+        inputBtn.onclick = function () {
+          subject = document.querySelector("#subject"); //querySelector 함수 ("#subject") 객체의 기능
+          if (subject.value == "") {
+            //input에 value 값이 없을떄
+            alert("제목을 넣어주세요.");
+            subject.focus();
+            return;
+          }
+          content = document.querySelector("#content"); //querySelector 함수 ("#subject") 객체의 기능
+          if (content.value == "") {
+            alert("내용을 입력해주세요.");
+            content.focus();
+            return;
+          }
+          pass = document.querySelector("#pass"); //querySelector 함수 ("#subject") 객체의 기능
+          if (pass.value == "") {
+            alert("비밀번호를 입력해주세요.");
+            pass.focus();
+            return;
+          }
+        };
         // 스크립트는 html 내용을 읽고 순차적으로 진행하기때문에 위에 명령어 실행하지 않고 이용할 시 읽어들이지 못하는 에러가 뜸 그걸 방지하기 위해
-        //onload()는 html head body를 다 읽어들이고 실행을 시키게 도와준다.
+        //(웹 브라우저에서 정해진 함수)onload()는 html head body를 다 읽어들이고 실행을 시키게 도와준다.
       };
     </script>
   </head>
@@ -41,7 +62,7 @@
         <!-- 테두리 box 선에 상단 이름 -->
         <div>
           <label for="subject" class="lbwidth">제목</label>
-          <input type="text" name="subject" id="subject" value="hello" />
+          <input type="text" name="subject" id="subject" />
         </div>
         <div>
           <label for="content" class="lbwidth">내용</label>
@@ -51,7 +72,7 @@
         </div>
         <div>
           <!-- password -->
-          <label for="content" class="lbwidth">비밀번호</label>
+          <label for="pass" class="lbwidth">비밀번호</label>
           <input type="password" name="pass" id="pass" />
         </div>
         <div>
@@ -105,8 +126,8 @@
           <label for="bigo">비고</label><br />
           <textarea name="bigo" id="bigo" rows="6"></textarea>
         </div>
-        <input type="button" value="input 등록" />
-        <button type="submit">button 등록</button>
+        <input type="button" value="input 등록" id="inputBtn" />
+        <button type="submit" id="submitBtn">button 등록</button>
         <!-- type 속성에 button은 클릭 submit은 동작(form action에 링크 전송) reset은 초기화 -->
         <!-- 버튼 입력시 주소창뒤에 name 값이 입력된다 -->
         <!-- 주소창뒤에 ?부터는 quary를 뜻한다 -->
