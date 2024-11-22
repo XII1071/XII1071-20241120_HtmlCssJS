@@ -11,6 +11,18 @@
         text-decoration: underline;
       }
     </style>
+    <script>
+      //alert("hello");
+      //창을 새로 열때 안내창에 내용이 나옵니다
+      //widow 객체는 웹 브라우저 객체를 대신한다
+      //onload()는 document가 읽혀지고 난 다음에 웹브라우저가 동작하는 함수
+      window.onload = function () {
+        subj = document.querySelector("#subject"); //querySelector 함수 ("#subject") 객체의 기능
+        alert(subj.value); //객체의 값
+        // 스크립트는 html 내용을 읽고 순차적으로 진행하기때문에 위에 명령어 실행하지 않고 이용할 시 읽어들이지 못하는 에러가 뜸 그걸 방지하기 위해
+        //onload()는 html head body를 다 읽어들이고 실행을 시키게 도와준다.
+      };
+    </script>
   </head>
 
   <body>
@@ -29,7 +41,7 @@
         <!-- 테두리 box 선에 상단 이름 -->
         <div>
           <label for="subject" class="lbwidth">제목</label>
-          <input type="text" name="subject" id="subject" />
+          <input type="text" name="subject" id="subject" value="hello" />
         </div>
         <div>
           <label for="content" class="lbwidth">내용</label>
@@ -38,24 +50,40 @@
           <!-- id와 form은 같아야한다. -->
         </div>
         <div>
+          <!-- password -->
           <label for="content" class="lbwidth">비밀번호</label>
           <input type="password" name="pass" id="pass" />
         </div>
         <div>
+          <!-- 날짜 -->
           <label for="regDate" class="lbwidth">작성일자</label>
           <input type="date" name="regDate" id="regDate" />
         </div>
         <div>
+          <!-- 시간설정 -->
+          <label for="regTime" class="lbwidth">작성일자</label>
+          <input type="time" name="regTime" id="regTime" />
+        </div>
+        <div>
+          <!-- 성별선택 -->
           <label for="male">남</label>
           <input type="radio" name="gender" id="male" value="남" />
 
           <label for="female">여</label>
-          <input type="radio" name="gender" id="female" value="여" />
+          <input type="radio" name="gender" id="female" value="여" checked />
+          <!-- checked 초기에 체크가 미리 되어있음 -->
+          <!-- radio는 이름은 같게 id는 다르게 해야한다 -->
         </div>
-        <!-- radio는 이름은 같게 id는 다르게 해야한다 -->
         <div>
+          <!-- 종목 선택 (중복가능) -->
           <label for="soccer">축구</label>
-          <input type="checkbox" name="sports" id="soccer" value="축구" />
+          <input
+            type="checkbox"
+            name="sports"
+            id="soccer"
+            value="축구"
+            checked
+          />
           <label for="basket">농구</label>
           <input type="checkbox" name="sports" id="basket" value="농구" />
           <label for="football">족구</label>
@@ -69,7 +97,8 @@
         <div>
           <select name="secret" id="secret">
             <option value="public">공개</option>
-            <option value="private">비밀</option>
+            <option value="private" selected>비밀</option>
+            <!-- selected : select 태그 안에 들어가는 option에 초기에 미리 설정되어 있음 -->
           </select>
         </div>
         <div>
