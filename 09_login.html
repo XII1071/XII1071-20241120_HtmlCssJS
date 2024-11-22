@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인</title>
+    <style>
+      .lbwidth {
+        display: inline-block;
+        width: 100px;
+        text-decoration: underline;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        loginBtn = document.querySelector("#loginBtn");
+
+        loginBtn.onclick = function () {
+          id = document.querySelector("#id"); //querySelector 함수 ("#subject") 객체의 기능
+          if (id.value == "") {
+            alert("ID를 입력해주세요.");
+            id.focus();
+            return;
+          }
+          pass = document.querySelector("#pass"); //querySelector 함수 ("#subject") 객체의 기능
+          if (pass.value == "") {
+            alert("패스워드를 입력해주세요.");
+            pass.focus();
+            return;
+          }
+        };
+        joinBtn = document.querySelector("#joinBtn");
+
+        joinBtn.onclick = function () {
+          joinBtn = document.querySelector("#id"); //querySelector 함수 ("#subject") 객체의 기능
+          if (id.value == "") {
+            alert("ID를 입력해주세요.");
+            id.focus();
+            return;
+          }
+          pass = document.querySelector("#pass"); //querySelector 함수 ("#subject") 객체의 기능
+          if (pass.value == "") {
+            alert("패스워드를 입력해주세요.");
+            pass.focus();
+            return;
+          }
+        };
+        homeBtn.onclick = function () {};
+      };
+    </script>
+  </head>
+  <body>
+    <form action="index.html" method="get">
+      <fieldset>
+        <legend>로그인</legend>
+        <br />
+        <div>
+          <!-- ID -->
+          <label for="id" class="lbwidth">ID</label>
+          <input
+            type="text"
+            name="id"
+            id="id"
+            placeholder="아이디를 입력해주세요"
+          />
+        </div>
+        <div>
+          <!-- password -->
+          <label for="pass" class="lbwidth">Password</label>
+          <input
+            type="password"
+            name="pass"
+            id="pass"
+            placeholder="비밀번호를 입력해주세요."
+          />
+        </div>
+        <br />
+        <input type="button" value="로그인" id="loginBtn" />
+        &nbsp;
+        <input type="button" value="회원가입" id="joinBtn" />
+        <br />
+        <br />
+        <input type="submit" value="🏠 Home" id="homeBtn" />
+      </fieldset>
+    </form>
+  </body>
+</html>
