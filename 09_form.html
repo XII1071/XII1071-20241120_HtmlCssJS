@@ -21,7 +21,8 @@
     </p>
     <p>사용자가 양식 태그를 이용하여 쌍방향으로 데이터를 주고 받을 수 있다.</p>
     <hr />
-    <form action="">
+    <form action="index.html" method="post">
+      <!-- method에 get은 읽을때 사용 post는 눈에보이지 않고 전송 -->
       <fieldset>
         <!-- 테두리 box 선 -->
         <legend>작성하기</legend>
@@ -36,8 +37,13 @@
           <!-- id는 유니크하고 class는 여러가지 쓴다  -->
           <!-- id와 form은 같아야한다. -->
         </div>
+        <div>
+          <label for="content" class="lbwidth">비밀번호</label>
+          <input type="password" name="pass" id="pass" />
+        </div>
         <input type="button" value="input 등록" />
-        <button>button 등록</button>
+        <button type="submit">button 등록</button>
+        <!-- type 속성에 button은 클릭 submit은 동작 reset은 초기화 -->
         <!-- 버튼 입력시 주소창뒤에 name 값이 입력된다 -->
         <!-- 주소창뒤에 ?부터는 quary를 뜻한다 -->
       </fieldset>
