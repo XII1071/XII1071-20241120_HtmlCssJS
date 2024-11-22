@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>속성 선택자</title>
+  </head>
+  <body>
+    <h1>속성 선택자</h1>
+    <p>
+      태그(element)의 속성별로 선택할 수 있는 선택자, data set 속성을 활용할
+      경우 유용
+    </p>
+    <a href="index.html">홈으로</a>
+    <hr />
+    <style>
+      /* 1. 속성값과 완전 일치 */
+      input[type="text"],
+      input[type="password"] {
+        background: yellowgreen;
+      }
+      /* 텍스트창 내부에 연두색 적용 */
+
+      /* 2. 속성값과 완전 일, 포함, 공백일 경우 적용, 단 "-" 제외 */
+      input[data-email~="one"] {
+        background: red;
+      }
+    </style>
+    <ol>
+      <li><input type="text" id="" value="attributes" readonly /></li>
+      <li><input type="password" id="" /></li>
+      <li>
+        <input
+          type="text"
+          id="one"
+          value="홍길동"
+          data-email="one@abc.com"
+          data-no="1"
+        />
+      </li>
+      <li>
+        <input
+          type="text"
+          id="one-two"
+          value="김길동"
+          data-email="one-two@abc.com"
+          data-no="2"
+        />
+      </li>
+      <li>
+        <input
+          type="text"
+          id="one two"
+          value="강길동"
+          data-email="one two@abc.com"
+          data-no="3"
+        />
+      </li>
+      <li>
+        <input
+          type="text"
+          id="onetwo"
+          value="박길동"
+          data-email="onetwo@abc.com"
+          data-no="4"
+        />
+      </li>
+      <li>
+        <input
+          type="text"
+          id="zero one two"
+          value="이길동"
+          data-email="zero one two@abc.com"
+          data-no="5"
+        />
+      </li>
+      <li>
+        <input
+          type="text"
+          id="zero-one two"
+          value="고길동"
+          data-email="zero-one two@abc.com"
+          data-no="6"
+        />
+      </li>
+      <li>
+        <input
+          type="text"
+          id="zero one-two"
+          value="장길동"
+          data-email="zero one-two@abc.com"
+          data-no="7"
+        />
+      </li>
+      <li>
+        <input
+          type="text"
+          id="zero-one-two"
+          value="김길동"
+          data-email="zero-one-two@abc.com"
+          data-no="7"
+        />
+      </li>
+    </ol>
+  </body>
+</html>

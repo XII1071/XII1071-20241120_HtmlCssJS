@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>기본 선택자</title>
+    <style>
+      /* *{} 전체 선택자 */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* 태그선택자 */
+      h1 {
+        background: red;
+      }
+      p {
+        background: yellowgreen;
+      }
+      li {
+        color: blue;
+      }
+      ul {
+        margin-top: 50px;
+      }
+      a {
+        margin: 20px 50px;
+      }
+      div {
+        border: 1px dashed pink;
+      }
+
+      /* 클래스 선택자 : 중복 적용*/
+      .item {
+        text-decoration: underline;
+      }
+      .fw {
+        font-weight: 700;
+      }
+      /* 아이디 선택자 : 중복 적용가능하나 유일하게 쓰는것이 바람직*/
+      #id {
+        background: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>기본 선택자</h1>
+    <p>전체 선택자, 태그 선택자, 클래스 선택자, 아이디 선택자</p>
+    <a href="index.html">홈으로</a>
+    <hr />
+
+    <div>
+      <ul>
+        <li class="item fw">전체 선택자</li>
+        <li class="item">태그 선택자</li>
+        <li class="item">클래스 선택자</li>
+        <li class="item">아이디 선택자</li>
+      </ul>
+    </div>
+  </body>
+</html>

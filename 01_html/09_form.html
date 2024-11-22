@@ -17,9 +17,13 @@
       //widow 객체는 웹 브라우저 객체를 대신한다
       //onload()는 document가 읽혀지고 난 다음에 웹브라우저가 동작하는 함수
       window.onload = function () {
+        // 스크립트는 html 내용을 읽고 순차적으로 진행하기때문에 위에 명령어 실행하지 않고 이용할 시 읽어들이지 못하는 에러가 뜸 그걸 방지하기 위해
+        //(웹 브라우저에서 정해진 함수)onload()는 html head body를 다 읽어들이고 실행을 시키게 도와준다.
         inputBtn = document.querySelector("#inputBtn");
+        submitBtn = document.querySelector("#submitBtn");
         // ("inputBtn") id = inputBtn를 끌어 당겨 쓸때
-        inputBtn.onclick = function () {
+        btnFnc = function (event) {
+          event.preventDefault();
           subject = document.querySelector("#subject"); //querySelector 함수 ("#subject") 객체의 기능
           if (subject.value == "") {
             //input에 value 값이 없을떄
@@ -39,9 +43,11 @@
             pass.focus();
             return;
           }
+          document.querySelector("#frmRegist").submit();
         };
-        // 스크립트는 html 내용을 읽고 순차적으로 진행하기때문에 위에 명령어 실행하지 않고 이용할 시 읽어들이지 못하는 에러가 뜸 그걸 방지하기 위해
-        //(웹 브라우저에서 정해진 함수)onload()는 html head body를 다 읽어들이고 실행을 시키게 도와준다.
+
+        inputBtn.onclick = btnFnc;
+        submitBtn.onclick = btnFnc;
       };
     </script>
   </head>
@@ -54,7 +60,7 @@
     </p>
     <p>사용자가 양식 태그를 이용하여 쌍방향으로 데이터를 주고 받을 수 있다.</p>
     <hr />
-    <form action="index.html" method="get">
+    <form action="../01_html/index.html" method="get" id="frmRegist">
       <!-- method에 get은 읽을때 사용 post는 눈에보이지 않고 전송 -->
       <fieldset>
         <!-- 테두리 box 선 -->
@@ -77,12 +83,30 @@
         </div>
         <div>
           <!-- 날짜 -->
+          <label for="wirter" class="lbwidth">작성자</label>
+          <input
+            type="text"
+            name="wirter"
+            id="wirter"
+            value="강지원"
+            readonly
+          />
+          <input
+            type="hidden"
+            name="wirterNo"
+            id="wirterNo"
+            value="ss@gg"
+            readonly
+          />
+        </div>
+        <div>
+          <!-- 날짜 -->
           <label for="regDate" class="lbwidth">작성일자</label>
           <input type="date" name="regDate" id="regDate" />
         </div>
         <div>
           <!-- 시간설정 -->
-          <label for="regTime" class="lbwidth">작성일자</label>
+          <label for="regTime" class="lbwidth">작성시간</label>
           <input type="time" name="regTime" id="regTime" />
         </div>
         <div>
@@ -124,10 +148,13 @@
         </div>
         <div>
           <label for="bigo">비고</label><br />
-          <textarea name="bigo" id="bigo" rows="6"></textarea>
+          <textarea name="bigo" id="bigo" rows="6" disabled>
+ 태그를 disabled 시키면 submit할 떄 전송에서 제외</textarea
+          >
         </div>
         <input type="button" value="input 등록" id="inputBtn" />
-        <button type="submit" id="submitBtn">button 등록</button>
+        <button type="submit" id="submitBtn" disabled>button 등록</button>
+        <!-- submit은 form action -->
         <!-- type 속성에 button은 클릭 submit은 동작(form action에 링크 전송) reset은 초기화 -->
         <!-- 버튼 입력시 주소창뒤에 name 값이 입력된다 -->
         <!-- 주소창뒤에 ?부터는 quary를 뜻한다 -->
