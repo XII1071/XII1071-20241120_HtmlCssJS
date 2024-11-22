@@ -21,7 +21,7 @@
     </p>
     <p>사용자가 양식 태그를 이용하여 쌍방향으로 데이터를 주고 받을 수 있다.</p>
     <hr />
-    <form action="index.html" method="post">
+    <form action="index.html" method="get">
       <!-- method에 get은 읽을때 사용 post는 눈에보이지 않고 전송 -->
       <fieldset>
         <!-- 테두리 box 선 -->
@@ -42,11 +42,31 @@
           <input type="password" name="pass" id="pass" />
         </div>
         <div>
-          <label for="male" class="lbwidth">남</label>
-          <input type="radio" name="gender" id="male" />
+          <label for="male">남</label>
+          <input type="radio" name="gender" id="male" value="남" />
 
-          <label for="female" class="lbwidth">여</label>
-          <input type="radio" name="gender" id="female" />
+          <label for="female">여</label>
+          <input type="radio" name="gender" id="female" value="여" />
+        </div>
+        <!-- radio는 이름은 같게 id는 다르게 해야한다 -->
+        <div>
+          <label for="soccer">축구</label>
+          <input type="checkbox" name="sports" id="soccer" value="축구" />
+          <label for="basket">농구</label>
+          <input type="checkbox" name="sports" id="basket" value="농구" />
+          <label for="football">족구</label>
+          <input type="checkbox" name="sports" id="football" value="족구" />
+        </div>
+        <div>
+          <label for="file" class="lbwidth">첨부파일</label>
+          <input type="file" name="file" id="file" />
+          <!-- 첨부파일 버튼이 생김 -->
+        </div>
+        <div>
+          <select name="secret" id="secret">
+            <option value="public">공개</option>
+            <option value="private">비밀</option>
+          </select>
         </div>
         <input type="button" value="input 등록" />
         <button type="submit">button 등록</button>
