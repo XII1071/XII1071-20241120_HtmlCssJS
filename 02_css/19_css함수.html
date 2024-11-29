@@ -1,35 +1,59 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
+    <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-  </head>
-  <style>
-    :root {
-      --base-color: #ff00ff;
-      /* -는 케밥식 표기법 */
-    }
-    .ishn:is(h1, h2, h3) {
-      color:red;
-    }
-    .notdiv:not(div) {
-      background: pink;
-    }
-    .my-var {background: var(--base-color);}
-  </style>
-  <body>
+
+        <style>
+        :root {
+        --base-color: #ff00ff;
+          /* -는 케밥식 표기법 */
+        }
+        .ishn:is(h1, h2, h3) {
+        color:red;
+        }
+        .notdiv:not(div) {
+        background: pink;
+        }
+        .my-var {background: var(--base-color);}
+        a::after {content: attr(href);}
+        /* a태그 옆에 글자 href주소가 붙는다 */
+        .my-url {background-image: url(../images/semantic.jpg); width: 100px; height: 100px;}
+        .my-color1{background-color: rgb(225, 0, 0);}
+        .my-color2{background-color: rgba(225, 0, 0, 0.5);}
+        .my-calc {width: calc(100% - 2rem); background-color: papayawhip;}
+        .my-min-max {width: min(20vw, 30rem); height: max(20vh, 20rem); background: burlywood;}
+    </style>
+    </head>
+
+    <body>
     <h1>CSS 함수</h1>
-    <p>is(), not() var(), attr(), url, rgb() rgba(), hsl(), hsla()</p>
+    <p>CSS 내장 함수</p>
     <hr />
     <ul>
-    </li>is(), not() <li>
+    </li>결정 함수 : is(), not() <li>
         <div class="ishn notdiv">is</div>
         <h2 class="ishn notdiv">not</h2>
-        
-        <li>var()</li>
-        <h3 class="my-bar">var</h3>
 
+        <li>변수 함수 : var()</li>
+        <h3 class="my-var">var</h3>
+
+        <li>속성 함수 : attr()</li>
+        <a href="index.html">홈으로</a>
+       
+        <li>속성 함수 : url()</li>
+        <div class="my-url">1</div>
+
+        <li>색상 함수 : rgb() rgba(), hsl(), hsla()</li>
+        <h4 class="my-color1">색상을 부를 수 있다.</h4>
+        <h4 class="my-color2">색상을 부를 수 있다.</h4>
+
+        <li>계산 함수 : calc()</li>
+        <div class="my-calc">계산할 수있다</div>
+
+        <li>최대 최소 함수 : max(), min()</li>
+        <div class="my-min-max"></div>
     </ul>
-  </body>
+    </body>
 </html>
