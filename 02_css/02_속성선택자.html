@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>속성 선택자</title>
+    <title></title>
   </head>
   <body>
     <h1>속성 선택자</h1>
@@ -15,90 +15,72 @@
     <hr />
     <style>
       /* 1. 속성값과 완전 일치 */
+      /* input[type=text] {background: yellowgreen;}
+    input[type=password] {background: yellowgreen;} */
       input[type="text"],
       input[type="password"] {
         background: yellowgreen;
       }
-      /* 텍스트창 내부에 연두색 적용 */
 
-      /* 2. 속성값과 완전 일, 포함, 공백일 경우 적용, 단 "-" 제외 */
-      input[data-email~="one"] {
+      /* 2. 속성값과 완전 일치, 포함, 공백일 경우 적용, 제외( "-" ) :: 5, 7 */
+      /* input[data-email~="one"] {background: red;} 3,5 */
+      /* input[data-role~="one"] {background: red;}  1,3,5 */
+
+      /* 3. 속성값과 완전 일치, 시작시, '-' 포함, 제외(공백, 다른글자포함) :: 1,2 */
+      /* input[data-role|='one'] {background: red;} */
+
+      /* 4. 속성값과 완전 일치 또는 접두어로 시작할 때 ) :: 1,2,3,4 */
+      /* input[data-role^='one'] {background: red;} */
+
+      /* 5. 속성값과 완전 일치 또는 접미어로 끝날 때 ) :: 2,3,4,5,6,7,8 */
+      /* input[data-role$='two'] {background: red;} */
+
+      /* 6. 속성값과 완전 일치 또는 포함될 때 ) :: 1,2,3,4,5,6,7,8 */
+      input[data-role*="one"] {
         background: red;
       }
     </style>
     <ol>
-      <li><input type="text" id="" value="attributes" readonly /></li>
-      <li><input type="password" id="" /></li>
+      <input type="text" id="" value="attributes" readonly /><br />
+      <input type="password" id="" />
+
+      <h4>data set 을 활용한 속성 선택자</h4>
+      <li>1<input type="text" data-role="one" data-email="one@abc.com" /></li>
       <li>
-        <input
-          type="text"
-          id="one"
-          value="홍길동"
-          data-email="one@abc.com"
-          data-no="1"
-        />
+        2<input type="text" data-role="one-two" data-email="one-two@abc.com" />
       </li>
       <li>
-        <input
-          type="text"
-          id="one-two"
-          value="김길동"
-          data-email="one-two@abc.com"
-          data-no="2"
-        />
+        3<input type="text" data-role="one two" data-email="one two@abc.com" />
       </li>
       <li>
-        <input
-          type="text"
-          id="one two"
-          value="강길동"
-          data-email="one two@abc.com"
-          data-no="3"
-        />
+        4<input type="text" data-role="onetwo" data-email="onetwo@abc.com" />
       </li>
       <li>
-        <input
+        5<input
           type="text"
-          id="onetwo"
-          value="박길동"
-          data-email="onetwo@abc.com"
-          data-no="4"
-        />
-      </li>
-      <li>
-        <input
-          type="text"
-          id="zero one two"
-          value="이길동"
+          data-role="zero one two"
           data-email="zero one two@abc.com"
-          data-no="5"
         />
       </li>
       <li>
-        <input
+        6<input
           type="text"
-          id="zero-one two"
-          value="고길동"
+          data-role="zero-one two"
           data-email="zero-one two@abc.com"
-          data-no="6"
         />
       </li>
       <li>
-        <input
+        7<input
           type="text"
-          id="zero one-two"
-          value="장길동"
+          data-role="zero one-two"
           data-email="zero one-two@abc.com"
-          data-no="7"
         />
       </li>
       <li>
-        <input
+        8<input
           type="text"
-          id="zero-one-two"
-          value="김길동"
+          data-role="zero-one-two"
           data-email="zero-one-two@abc.com"
-          data-no="7"
         />
       </li>
     </ol>

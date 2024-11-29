@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    #male:checked~button {
+      visibility: hidden;
+    }
+
+    #name:focus {
+      background: pink;
+    }
+
+    #chk:checked+input[type=text] {
+      visibility: hidden;
+    }
+
+    #name2:disabled+#caption {
+      color: red;
+    }
+
+    #hide:checked+fieldset {
+      visibility: hidden;
+    }
+
+    
+    #show:not(:checked)+fieldset {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>상태 선택자</h1>
+  <p>checked, focus, disabled </p>
+  <a href="index.html">홈으로</a>
+  <hr>
+
+  <label for="female">여</label>
+  <input type="radio" name="gender" id="female">
+  <label for="male">남</label>
+  <input type="radio" name="gender" id="male">
+  <button type="button">통과</button><br>
+
+  <input type="checkbox" name="chk" id="chk">
+  <input type="text" name="name" id="name">
+  <label for="chk">선택 visibility</label><br>
+
+  <input type="checkbox" name="chk2" id="chk2">
+  <input type="text" name="name2" id="name2" disabled>
+  <label id="caption" for="chk2">선택 disabled</label><br>
+
+  <br><br>
+  <label for="hide">감추기</label><input type="checkbox" name="hide" id="hide">
+  <fieldset>
+    <legend>추가 항목</legend>
+    <div id="addItem">
+      상호명: <input type="text" name="coName" id="coName"><br>
+      사업자 번호: <input type="text" name="coNum" id="coNum"><br>
+    </div>
+  </fieldset>
+
+  <br><br>
+  <label for="show">보이기</label><input type="checkbox" name="show" id="show">
+  <fieldset>
+    <legend>추가 항목</legend>
+    <div id="addItem">
+      상호명: <input type="text" name="coName" id="coName"><br>
+      사업자 번호: <input type="text" name="coNum" id="coNum"><br>
+    </div>
+  </fieldset>
+
+  <button type="button">통과</button><br>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <h1>display 속성</h1>
+  <p>none, inline, block, inline-block, table, table-cell, flex</p>
+  <hr>
+
+  <p>display속성은 visibility와 비교</p>
+  <button type="button" style="visibility: visible;">visibility: visible</button>
+  <button type="button" style="visibility: hidden;">visibility: hidden</button>
+  <button type="button" style="display: none;">display: none</button>
+  <button type="button" style="display: inline;">display: inline</button>
+  <button type="button" style="display: inline-block;width:70px;background:pink;">display: inline-block</button>
+  <button type="button" style="display: block;">display: block</button>
+
+  <p>table-cell in table</p>
+  <table style="display: table;width: 150px;height: 150px;background-color: aqua;">
+    <tr>
+      <td style="display: table-cell;text-align: center;">
+        <div style="width: 50px;height: 50px;display: inline-block;background: blue;"></div>
+      </td>
+    </tr>
+  </table>
+  
+  <p>block in block</p>
+  <div class="outer" style="width: 150px;height: 150px; background: aqua;display: table-cell;vertical-align: middle;text-align: center;">
+    <div class="inner" style="width: 50px;height: 50px;background: blue; margin: 0 auto;"></div>
+  </div>
+
+  <p>inline in block</p>
+  <div class="outer" style="width: 150px;height: 150px; background: aqua;text-align: center;">
+    <span class="box" style="line-height: 150px;">center</span>
+  </div>
+  
+</body>
+
+</html>

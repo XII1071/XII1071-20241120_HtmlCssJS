@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    /* 후손 선택자 :: 다양한 선택자의 후손에 지정할 수 있다. */
+    body div {background: royalblue;}
+    body div div {background: yellow;}
+    div h1 {color: white;}
+    #div4 h1 {color: orange;}
+
+    /* 자손 선택자 :: 직계 */
+    body > div {background: red;}
+
+    div div>h1 {color: pink;}
+    
+  </style>
+</head>
+
+<body>
+  <h1>후손, 자손 선택자</h1>
+  <p>후손은 하위 레벨에 있는 태그를 선택할 때 사용, 단 자손은 직계만!</p>
+  <a href="index.html">홈으로</a>
+  <hr>
+
+  <div>
+    <h1>h1 1</h1>
+  </div>
+  <div>2
+    <div id="div4">4
+      <h1>h1 2</h1>
+    </div>
+    <div>5
+      <h1>h1 3</h1>
+    </div>
+  </div>
+  <div>3</div>
+
+</body>
+
+</html>

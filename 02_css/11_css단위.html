@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    #divem {
+      font-size: 14px;
+    }
+
+    #divem div {
+      font-size: 1.2em;
+      /* font-size: 120%; -- 1.2m과 결과 동일 */
+    }
+  </style>
+</head>
+
+<body>
+  <h1>CSS의 단위</h1>
+  <p>%, em, cm, mm, inch, px, pt, ex, ch 등</p>
+  <hr>
+
+  <p>일반적인 글꼴의 기본 크기 16px = 12pt = 1em = 100%</p>
+  <h4>일반적인 글꼴의 기본 크기</h4>
+  <!-- h1 : 32px, h2: 24px, h3: 19px, h4: 16px, h5: 12px, h6: 10px -->
+  <p>1. 절대적인 크기 pt, px, cm, mm, in, pc, Q</p>
+  <ul>
+    <li>pt :: 1pt = 1in의 1/72</li>
+    <li>px :: 1px = 1in의 1/96</li>
+    <li>cm :: 1cm = 96px/2.54</li>
+    <li>mm :: 1mm = 1cm의 1/10</li>
+    <li>Q :: 1Q = 1cm의 1/40</li>
+    <li>in :: 1in = 2.54cm = 96px</li>
+    <li>pc :: 1pc = 1in의 1/16</li>
+  </ul>
+  <p>2. 상대적인 크기 em, %</p>
+  <p>rem(root em) :: px, pt가 절대적인 크기라면 em, %는 상대적인 크기</p>
+  <DIV id="divem">
+    font size( 14px )
+    <div>
+      font size (14 * 1.2 = 16.8px)
+      <div>
+        font size(16.8 * 1.2 = 20.16px)
+        <div>
+          font size(20.16 * 1.2 = 24.192PX)
+        </div>
+      </div>
+    </div>
+  </DIV>
+  <p>3. 각도 단위 deg, grad, rad, turn</p>
+  <ul>
+    <li>deg :: 도를 지칭, 360도가 완전한 원</li>
+    <li>grad :: 그라디안을 지칭, 400 그라디안이 완전한 원</li>
+    <li>rad :: 라디안을 지칭, 2π 라디안이 완전한 원</li>
+    <li>turn :: 턴을 지칭, 1턴이 완전한 원</li>
+  </ul>
+  <p>4. 시간 단위 s, ms</p>
+  <ul>
+    <li>s :: 초</li>
+    <li>ms :: 밀리초, 1000ms = 1s</li>
+  </ul>
+  <p>5. 해상도 단위 dpi, dpcm, dppx, x</p>
+  <ul>
+    <li>dpi :: 인치당 점의 수.</li>
+    <li>dpcm :: 센티미터당 점의 수.</li>
+    <li>dppx, x :: 픽셀당 점의 수.</li>
+  </ul>
+  <p>6. 모바일 단위 vw, vh</p>
+  <ul>
+    <li>vw :: 뷰포트 너비의 1%.</li>
+    <li>vh :: 뷰포트 높이의 1%.</li>
+  </ul>
+
+</body>
+
+</html>

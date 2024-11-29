@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    ul {
+      list-style: none;
+    }
+
+    li {
+      display: inline-block;
+      border: 1px dotted black;
+      width: 80px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      background-color: yellowgreen;
+      cursor: pointer;
+    }
+
+    ul span:nth-child(2n) {
+      color: red;
+      font-weight: bold;
+    }
+
+    ul li:nth-of-type(2n) {
+      color: white;
+      font-weight: bold;
+    }
+
+    ul li:first-child {
+      border-radius: 20px 0 0 20px;
+    }
+    ul li:last-of-type {
+      border-radius: 0 20px 20px 0;
+    }
+    ul span:first-of-type {
+      background: black;
+    }
+    ul span:last-child {
+      background: black;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>구조 선택자</h1>
+  <p>같은 종류의 연속적인 태그에 선별적으로 적용 가능</p>
+  <p>nth-child(N) 부모안에 모든 요소 중 N번째 요소</p>
+  <p>A:nth-of-type(N) 부모안에 A라는 요소 중 N번째 요소</p>
+  <p>first-child 부모안에 모든 요소 중 첫번째 요소</p>
+  <p>A:first-of-type A라는 요소 중 첫번째 요소</p>
+  <p>last-child 부모안에 모든 요소 중 마지막 요소</p>
+  <p>A:last-of-type A라는 요소 중 마지막 요소</p>
+  <a href="index.html">홈으로</a>
+  <hr>
+
+  <ul>
+    <li>li 1</li>
+    <span>span 1</span>
+    <li>li 2</li>
+    <span>span 2</span>
+    <li>li 3</li>
+    <span>span 3</span>
+    <li>li 4</li>
+    <span>span 4</span>
+    <li>li 5</li>
+    <span>span 5</span>
+  </ul>
+
+</body>
+
+</html>

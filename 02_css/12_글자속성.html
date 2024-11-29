@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    .web-font-impact {font-family: impact, serif;}
+    li:nth-of-type(1) {font-family: '맑은 고딕', sans-serif;}
+    li:nth-of-type(2) {font-family: '맑은 고딕', sans-serif;}
+    li:nth-of-type(3) {font-size: 32px;}
+    li:nth-of-type(4) {font-size: 24pt;color: #1886ec;}
+    li:nth-of-type(5) {font-size: 2em;font-weight: bold;color: black}
+    li:nth-of-type(6) {font-size: 2em;font-style: italic;color: black}
+    li:nth-of-type(7) {font-size: 2em;text-decoration: line-through;color: black}
+    li:nth-of-type(8) {font-size: 2em;text-decoration: overline;color: black}
+    li:nth-of-type(9) {font-size: 2em;text-decoration: underline;color: black}
+    li:nth-of-type(10) {font-size: 2em;font-variant: small-caps;color: black}
+    .font-super {font-size: small;vertical-align: super;}
+    .font-sub{font-size: small;vertical-align: sub;}
+    .sup{ bottom: 1ex;position: relative; font-size: small;}
+    .sub{ bottom: -1ex;position: relative;font-size: small;}
+  </style>
+  <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <!-- <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-brush.css" rel="stylesheet"> -->
+</head>
+
+<body>
+  <h1>CSS의 글자 속성</h1>
+  <p>글자에 대한 css</p>
+  <hr>
+  <!-- <font>deprcated</font> -->
+  <ul>
+    <li style="font-family: '궁서체';">글자 글꼴(Font) 지정</li>
+    <li class="web-font-impact">글자 글꼴(Web Font) 지정</li>
+    <li>글자 크기 지정</li>
+    <li>글자 색상 지정</li>
+    <li>글자 weight 지정</li>
+    <li>글자 italic 지정</li>
+    <li>글자 del 지정</li>
+    <li>글자 overline 지정</li>
+    <li>글자 ins, underline 지정</li>
+    <li>글자 small-caps 지정</li>
+    <li>x<span class="font-super">2</span>+x+1=f(x)</li>
+    <li>H<span class="font-sub">2</span>O</li>
+    <!-- ex 현재 폰트의 높이값, em의 절반값 -->
+    <!-- ch 현재 폰트의 넓이값, width: 40ch :: 40개의 문자열을 포함 -->
+    <li>x<span class="sup">2</span>+x+1=f(x)</li>
+    <li>H<span class="sub">2</span>O</li>
+  </ul>
+</body>
+
+</html>
