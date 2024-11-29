@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
+    <style>
+      fieldset {
+        margin-top: 30px;
+        border: 2px dotted gray;
+      }
+    </style>
   </head>
 
   <body>
@@ -26,101 +32,143 @@
     </button>
     <button type="button" style="display: block">display: block</button>
 
-    <p>block in table-cell</p>
-    <table
-      style="
-        display: table;
-        width: 150px;
-        height: 150px;
-        background-color: aqua;
-      "
-    >
-      <tr>
-        <td
-          style="
-            display: table-cell;
-            text-align: left;
-            vertical-align: top;
-            left: 20px;
-          "
-        >
-          <div
+    <fieldset>
+      <legend>inline in block</legend>
+      <div
+        class="outer"
+        style="
+          width: 150px;
+          height: 150px;
+          background: aqua;
+          text-align: center;
+        "
+      >
+        <span class="box" style="line-height: 150px">center</span>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>block in table-cell</legend>
+      <table
+        style="
+          display: table;
+          width: 150px;
+          height: 150px;
+          background-color: aqua;
+        "
+      >
+        <tr>
+          <td
             style="
-              width: 50px;
-              height: 50px;
-              display: inline-block;
-              background: blue;
+              display: table-cell;
+              text-align: center;
+              vertical-align: middle;
+              left: 20px;
             "
-          ></div>
-        </td>
-        world
-      </tr>
-    </table>
-    hello
-    <p>block in block with table-cell</p>
-    <div
-      class="outer"
-      style="
-        width: 150px;
-        height: 150px;
-        background: aqua;
-        display: table-cell;
-        vertical-align: middle;
-        text-align: center;
-      "
-    >
-      <div
-        class="inner"
-        style="width: 50px; height: 50px; background: blue; margin: 0 auto"
-      ></div>
-    </div>
+          >
+            <div
+              style="
+                width: 50px;
+                height: 50px;
+                display: inline-block;
+                background: blue;
+              "
+            ></div>
+          </td>
+          world
+        </tr>
+      </table>
+      hello
+    </fieldset>
 
-    <p>block in block with position & top, left</p>
-    <div
-      class="outer"
-      style="width: 150px; height: 150px; background: aqua; position: relative"
-    >
+    <fieldset>
+      <legend>block in block with table-cell and margin 0 auto</legend>
       <div
-        class="inner"
+        class="outer"
         style="
-          width: 50px;
-          height: 50px;
-          background: blue;
-          margin: 0 auto;
-          position: absolute;
-          top: 50px;
-          left: 50px;
+          width: 150px;
+          height: 150px;
+          background: aqua;
+          display: table-cell;
+          vertical-align: middle;
         "
-      ></div>
-    </div>
-
-    <p>block in block with position & top, left, %</p>
-    <div
-      class="outer"
-      style="width: 150px; height: 150px; background: aqua; position: relative"
-    >
+      >
+        <div
+          class="inner"
+          style="width: 50px; height: 50px; background: blue; margin: 0 auto"
+        ></div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>block in block with position & top, left</legend>
       <div
-        class="inner"
+        class="outer"
         style="
-          width: 50px;
-          height: 50px;
-          background: blue;
-          margin: 0 auto;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          margin-left: -25px;
-          margin-top: -25px;
+          width: 150px;
+          height: 150px;
+          background: aqua;
+          position: relative;
         "
-      ></div>
-    </div>
-
-    <p>inline in block</p>
-    <div
-      class="outer"
-      style="width: 150px; height: 150px; background: aqua; text-align: center"
-    >
-      <span class="box" style="line-height: 150px">center</span>
-    </div>
+      >
+        <div
+          class="inner"
+          style="
+            width: 50px;
+            height: 50px;
+            background: blue;
+            margin: 0 auto;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+          "
+        ></div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>block in block with position & top, left, %</legend>
+      <div
+        class="outer"
+        style="
+          width: 150px;
+          height: 150px;
+          background: aqua;
+          position: relative;
+        "
+      >
+        <div
+          class="inner"
+          style="
+            width: 50px;
+            height: 50px;
+            background: blue;
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -25px;
+            margin-top: -25px;
+          "
+        ></div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>block in block with flex</legend>
+      <div
+        class="outer"
+        style="
+          width: 150px;
+          height: 150px;
+          background: aqua;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <div
+          class="inner"
+          style="width: 50px; height: 50px; background: blue; margin: 0 auto"
+        ></div>
+      </div>
+    </fieldset>
   </body>
 </html>
