@@ -1,13 +1,47 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title></title>
-</head>
-<body>
-  <h1>box 속성</h1>
-  <p></p>
-  <hr>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      span {
+        background: yellow;
+        border: 2px double black;
+        --padding: 3px 10px 15px 20px;
+        --padding: 5px 10px;
+        --padding: 1px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 2px;
+        padding-right: 2px;
+        border-radius: 10px 5px 20px 10px;
+        width: 100px;
+        height: 100px;
+      }
+      div {
+        border: 1px solid red;
+        margin: 10px 5px 10px 10px;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        --border-radius: 5px 10px 20px 30px;
+        --border-radius: 15px 60px;
+        --border-top-left-radius: 30px;
+        border-radius: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>box 속성</h1>
+    <p>
+      모든 태그에는 박스형의 테두리를 가진다. 그래서 margin, padding등이 적용됨
+    </p>
+    <hr />
+
+    <span>span box</span>
+    <div>div box</div>
+  </body>
 </html>
