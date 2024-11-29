@@ -13,8 +13,16 @@
         list-style: none;
       }
       li {
+        width: 100px;
+        background-color: yellowgreen;
+        margin-right: 10px;
         text-align: center;
-        display: inline-block;
+        --display: inline;
+        float: left; /* 왼쪽부터 시작한다. */
+        --float: right;
+      }
+      p {
+        clear: both; /* 흐름 순서를 멈추게 한다. ex) ul과 같은선상에 있는걸 방지한다. */
       }
     </style>
   </head>
@@ -30,5 +38,7 @@
       <li>menu4</li>
       <li>menu5</li>
     </ul>
+    <p>paragraph</p>
+    <img src="../images/Strawberry.jpg" alt="Strawberry" width="100px" />
   </body>
 </html>
