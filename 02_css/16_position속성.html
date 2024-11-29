@@ -1,13 +1,45 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title></title>
-</head>
-<body>
-  <h1>float(유동) 속성</h1>
-  <p>글자에 대한 css</p>
-  <hr>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      /* 1번째 방법 */
+      .box {
+        width: 100px;
+        height: 100px;
+      }
+      .box:first-child {
+        background: red;
+      }
+      .box:nth-child(2) {
+        background: yellowgreen;
+      }
+      .box:nth-child(3) {
+        background: blue;
+      }
+      /* 2번째 방법 */
+      /* .box:nth-of-type(1) {
+        background: red;
+      }
+      .box:nth-of-type(2) {
+        background: yellowgreen;
+      }
+      .box:nth-of-type(3) {
+        background: blue;
+      } */
+      /* 방법은 2가지가 있으나 :nth-of-type()은 div div 까지는 적용만 되고 단점은 div div div는 안된다. */
+    </style>
+  </head>
+  <body>
+    <h1>position 속성</h1>
+    <p>element 가 놓일 위치에 대한 기준</p>
+    <hr />
+    <div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </body>
 </html>
