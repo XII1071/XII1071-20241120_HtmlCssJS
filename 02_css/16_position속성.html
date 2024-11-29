@@ -5,20 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
     <style>
+      body > div {
+        border: 3px solid #000;
+        position: relative;
+        height: 150px;
+        width: 150px;
+        overflow: scroll; /* overflow hideen 일때 영역 밖에 튀어나온건 숨김 scroll은 스크롤이 생겨 보여줌 */
+      }
+
       /* 1번째 방법 */
       .box {
+        position: absolute;
         width: 100px;
         height: 100px;
+        /* absolute document 기준 fixed 브라우저 기준 */
+        /* 부모는 relative 자식은 absolute */
       }
       .box:first-child {
         background: red;
+        top: 10px;
+        left: 10px;
+        z-index: 5;
       }
       .box:nth-child(2) {
         background: yellowgreen;
+        top: 50px;
+        left: 50px;
+        z-index: 2;
       }
       .box:nth-child(3) {
         background: blue;
+        top: 90px;
+        left: 90px;
+        z-index: 3;
       }
+      /* 원래 자기위치 (static)기준에서 top left 만큼 벌어짐 */
+
       /* 2번째 방법 */
       /* .box:nth-of-type(1) {
         background: red;
@@ -34,12 +56,37 @@
   </head>
   <body>
     <h1>position 속성</h1>
-    <p>element 가 놓일 위치에 대한 기준</p>
+    <p>position element 가 놓일 위치에 대한 기준</p>
+    <p>
+      position 속성은 (static, absolust fixed, relative)이고 기본값은 static
+    </p>
+    <p>position 속성의 기본값은 static</p>
     <hr />
     <div>
       <div class="box"></div>
+      hello world
       <div class="box"></div>
+      hello world hello world hello world hello world
       <div class="box"></div>
+      hello
     </div>
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the
+      1500s, when an unknown printer took a galley of type and scrambled it to
+      make a type specimen book. It has survived not only five centuries, but
+      also the leap into electronic typesetting, remaining essentially
+      unchanged. It was popularised in the 1960s with the release of Letraset
+      sheets containing Lorem Ipsum passages, and more recently with desktop
+      publishing software like Aldus PageMaker including versions of Lorem
+      Ipsum.
+    </p>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
   </body>
 </html>
