@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <style>
+    :root {
+      --base-color: #ff00ff;
+      /* -는 케밥식 표기법 */
+    }
+    .ishn:is(h1, h2, h3) {
+      color:red;
+    }
+    .notdiv:not(div) {
+      background: pink;
+    }
+    .my-var {background: var(--base-color);}
+  </style>
+  <body>
+    <h1>CSS 함수</h1>
+    <p>is(), not() var(), attr(), url, rgb() rgba(), hsl(), hsla()</p>
+    <hr />
+    <ul>
+    </li>is(), not() <li>
+        <div class="ishn notdiv">is</div>
+        <h2 class="ishn notdiv">not</h2>
+        
+        <li>var()</li>
+        <h3 class="my-bar">var</h3>
+
+    </ul>
+  </body>
+</html>
