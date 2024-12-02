@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
     <style>
-      #container1 {
+      .container {
         background: yellow;
         border: 2px solid black;
         border-radius: 5px;
@@ -34,14 +34,27 @@
       // }
 
       // function: 문서가 읽어지는 시점에서 별도의 기억공간에 저장되고 사용되는 시점에서 호출
-      function showFlexBlock(choice) {
-        container1 = document.querySelector("#container1");
+      function showGrp1(choice) {
+        cont1 = document.querySelector("#container1");
         if (choice == "1") {
-          container1.style.display = "block";
+          cont1.style.display = "block";
         } else if (choice == "2") {
-          container1.style.display = "flex";
+          cont1.style.display = "flex";
         } else if (choice == "3") {
-          container1.style.display = "inline-flex";
+          cont1.style.display = "inline-flex";
+        }
+      }
+
+      function showGrp2(choice) {
+        cont2 = document.querySelector("#container2");
+        if (choice == "1") {
+          cont2.style.flexDirection = "row";
+        } else if (choice == "2") {
+          cont2.style.flexDirection = "column";
+        } else if (choice == "3") {
+          cont2.style.flexDirection = "row-reverse";
+        } else if (choice == "4") {
+          cont2.style.flexDirection = "column-reverse";
         }
       }
       // ()안에 있는 숫자는 매개변수이다.
@@ -53,16 +66,17 @@
     <p>flex</p>
     <hr />
 
+    <!--cont1 (Grp1) -->
     <fieldset>
       <legend>container에 display속성을 block, flex, inline-flex로 변경</legend>
-      <p></p>
+      <p>flex는 기본적으로 float와 달리 contents영역의 크기가 동일하게 설정</p>
       <label for="rbBlock"
         ><input
           type="radio"
           name="grp1"
           id="rbBlock"
           checked
-          onclick="showFlexBlock(1)"
+          onclick="showGrp1(1)"
         />block</label
       >
       <label for="rbFlex"
@@ -70,7 +84,7 @@
           type="radio"
           name="grp1"
           id="rbFlex"
-          onclick="showFlexBlock(2)"
+          onclick="showGrp1(2)"
         />flex</label
       >
       <label for="rbInlineFlex"
@@ -78,10 +92,10 @@
           type="radio"
           name="grp1"
           id="rbInlineFlex"
-          onclick="showFlexBlock(3)"
+          onclick="showGrp1(3)"
         />inline-flex</label
       >
-      <div id="container1">
+      <div id="container1" class="container">
         <div class="item">aaa <br />aaa</div>
         <div class="item">bbbbbbbbbb</div>
         <div class="item">ccccc</div>
@@ -99,5 +113,49 @@
       container1.style.display = "inline-flex";
     }
   </script> -->
+
+    <!--cont2 (Grp2) -->
+    <fieldset>
+      <legend>container에 flex 방향을 설정</legend>
+      <p></p>
+      <label for="rbRow"
+        ><input
+          type="radio"
+          name="grp2"
+          id="rbRow"
+          checked
+          onclick="showGrp2(1)"
+        />row</label
+      >
+      <label for="rbCol"
+        ><input
+          type="radio"
+          name="grp2"
+          id="rbCol"
+          onclick="showGrp2(2)"
+        />column</label
+      >
+      <label for="rbRowRev"
+        ><input
+          type="radio"
+          name="grp2"
+          id="rbRowRev"
+          onclick="showGrp2(3)"
+        />row-reverse</label
+      >
+      <label for="rbColRev"
+        ><input
+          type="radio"
+          name="grp2"
+          id="rbColRev"
+          onclick="showGrp2(4)"
+        />column-reverse</label
+      >
+      <div id="container2" class="container" style="display: flex">
+        <div class="item">aaa <br />aaa</div>
+        <div class="item">bbbbbbbbbb</div>
+        <div class="item">ccccc</div>
+      </div>
+    </fieldset>
   </body>
 </html>
