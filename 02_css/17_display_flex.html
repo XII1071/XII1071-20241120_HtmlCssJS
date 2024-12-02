@@ -174,11 +174,11 @@
       </div>
     </fieldset>
 
+    <!-- justify-content -->
     <fieldset>
       <legend>container에 x축 방향 정렬, justify-content</legend>
-      <p>컨테이너가 더 이상 아이템들을 한 줄에 담을 여유 공간이 없을 때</p>
       <p>
-        flex-start(기본), flex-end, cener, space-between(item 사이에 균일한
+        flex-start(기본), flex-end,cener, space-between(item 사이에 균일한
         간격), <br />
         space-around(item 둘레의 균일한 간격), space-evenly(item 사이, 둘레
         균일한 간격)
@@ -191,6 +191,32 @@
         <div class="item">aaa <br />aaa</div>
         <div class="item">bbbbbbbbbb</div>
         <div class="item">ccccc</div>
+      </div>
+      <img
+        src="../images/flex-space.jpg"
+        alt="justify-content 속성"
+        width="400px"
+      />
+    </fieldset>
+
+    <!-- align-items -->
+    <fieldset>
+      <legend>container에 y축 방향 정렬, align-items</legend>
+      <p>
+        stretch(기본), flex-start, flex-end, cener, <br />
+        baseline(제일 큰 contents영역의 밑줄기준으로 정렬)
+      </p>
+      <!-- wrap-reverse : 쓸경우 마지막에 있는 c가 위로 올라오면서 역순으로 진행 -->
+      <div
+        class="container"
+        style="display: flex; align-items: baseline; height: 200px"
+      >
+        <div class="item">
+          <span style="font-size: 50px">aaa</span>
+        </div>
+        <div class="item" style="margin-top: 20px">bbbbbbbbbb</div>
+        <div class="item" style="margin-top: 10px">ccccc</div>
+        <!-- baseline : 글자 밑에를 맞춤 제일 큰 글자 기준으로 맞춤 -->
       </div>
     </fieldset>
   </body>
