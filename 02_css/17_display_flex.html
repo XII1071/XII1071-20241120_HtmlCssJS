@@ -214,9 +214,61 @@
         <div class="item">
           <span style="font-size: 50px">aaa</span>
         </div>
-        <div class="item" style="margin-top: 20px">bbbbbbbbbb</div>
+        <div class="item" style="width: 60px">bbbbbbbbbb</div>
         <div class="item" style="margin-top: 10px">ccccc</div>
         <!-- baseline : 글자 밑에를 맞춤 제일 큰 글자 기준으로 맞춤 -->
+      </div>
+    </fieldset>
+
+    <!-- align-item 여러 행 정렬 -->
+    <fieldset>
+      <legend>container에 여러 행 정렬, align-content</legend>
+      <p>
+        stretch(기본), flex-start, flex-end, cener, space-between(item 사이에
+        균일한 간격), <br />
+        space-around(item 둘레의 균일한 간격), space-evenly(item 사이, 둘레
+        균일한 간격)
+      </p>
+
+      <div
+        class="container"
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          width: 11rem;
+          height: 11rem;
+          align-content: space-evenly;
+        "
+      >
+        <div class="item">aaa</div>
+        <div class="item">bbbbbbbbbb</div>
+        <div class="item">ccccc</div>
+      </div>
+    </fieldset>
+
+    <hr />
+
+    <fieldset>
+      <legend>item에 기본 크기를 설정 flex-basis</legend>
+      <p>auto(기본값), 0, 50%, 300px, 10rem, content</p>
+      <style>
+        /* 작으면 70ox, 크면  콘텐트 넓이 만큼 */
+        .item1 {
+          flex-basis: 70px;
+        }
+        .item1 {
+          /* 작으면 콘텐트가 길어도 짤림 */
+          width: 70px;
+        }
+        .item1 {
+          word-wrap: break-word;
+          /* 콘텐트 아래로 줄바꿈 하게 함 */
+        }
+      </style>
+      <div class="container" style="display: flex">
+        <div class="item1 item">aaa</div>
+        <div class="item1 item">bbbbbbbbbb</div>
+        <div class="item1 item">ccccc</div>
       </div>
     </fieldset>
   </body>
