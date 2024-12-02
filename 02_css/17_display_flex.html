@@ -253,14 +253,14 @@
       <p>auto(기본값), 0, 50%, 300px, 10rem, content</p>
       <style>
         /* 작으면 70ox, 크면  콘텐트 넓이 만큼 */
-        .item1 {
+        --.item1 {
           flex-basis: 70px;
         }
         .item1 {
           /* 작으면 콘텐트가 길어도 짤림 */
           width: 70px;
         }
-        .item1 {
+        --.item1 {
           word-wrap: break-word;
           /* 콘텐트 아래로 줄바꿈 하게 함 */
         }
@@ -271,5 +271,103 @@
         <div class="item1 item">ccccc</div>
       </div>
     </fieldset>
+
+    <!-- flex-grow -->
+    <fieldset>
+      <legend>item에 기본 크기를 설정 flex-grow</legend>
+      <p>0(기본값), 1</p>
+      <style>
+        .item2 {
+          flex-grow: 1;
+        }
+
+        /* 1:2:1의 비율로 세팅할 경우 콘텐트 나머지 공간을 비율로 조정함*/
+        .item2:nth-child(1) {
+          flex-grow: 1;
+        }
+        .item2:nth-child(2) {
+          flex-grow: 2;
+        }
+        .item2:nth-child(3) {
+          flex-grow: 1;
+        }
+      </style>
+      <div class="container" style="display: flex">
+        <div class="item2 item">aaa</div>
+        <div class="item2 item">bbbbbbbbbb</div>
+        <div class="item2 item">ccccc</div>
+      </div>
+    </fieldset>
+
+    <!-- flex-shrink -->
+    <fieldset>
+      <legend>
+        flex-shrink는 flex-grow와 쌍을 이루는 속성으로, 아이템이 flex-basis의
+        값보다 작아질 수 있는지를 결정
+      </legend>
+      <p>
+        flex-shrink는 0이면 flex-basis보다 크기가 자동으로 줄어들지 않는다.
+        작아짐
+      </p>
+      <p>
+        flex-shrink는 1일때 해당 div는 크기가 유연하게 변한다. flex-basis보다
+        작아짐
+      </p>
+      <style>
+        .item3 {
+          flex-basis: 150px;
+          flex-shrink: 1;
+        }
+
+        /* 1:2:1의 비율로 세팅할 경우 콘텐트 나머지 공간을 비율로 조정함*/
+        .item3:nth-child(1) {
+          flex-shrink: 0;
+          width: 100px;
+        }
+        .item3:nth-child(2) {
+          flex-grow: 1;
+        }
+        /* 가운데만 크기 바뀜 왼쪽 오른쪽은 바뀌지 않고 고정 */
+
+        /* .item3:nth-child(3) {
+          flex-grow: 1;
+        } */
+      </style>
+      <div class="container" style="display: flex; width: 350px">
+        <div class="item3 item">aaa</div>
+        <div class="item3 item">bbbbbbbbbb adadwdwadwawf wfdawwf awfa</div>
+        <div class="item3 item">ccccc</div>
+      </div>
+    </fieldset>
+    <pre>
+      flex-grow, flex-shrink, flex-basis를 한 번에 쑬 수 있는 축약형 속성
+      flex-grow : 전체공간을 유연하게 재분할
+      flex-shrink : 0보다 큰값이 들어오면 유연한게 크기가 조정됨. (0이면 고정)
+      flex-basis : 아이템의 기본 크기를 지정
+      flex: 1;
+      /* flex-grow: 1; flex-shrink: 1; flex-basis: 0%; */
+      flex: 1 1 auto;
+      /* flex-grow: 1; flex-shrink: 1; flex-basis: auto; */
+      flex: 1 500px;
+      /* flex-grow: 1; flex-shrink: 1; flex-basis: 500px; */  
+    </pre>
+
+    <pre>
+      .item:nth-child(1) {order: 3;} /* A */
+      .item:nth-child(2) {order: 1;} /* B */
+      .item:nth-child(3) {order: 2;} /* C */
+    </pre>
+
+    <pre>
+    숫자가 클 수록 위로 올라감
+    .item:nth-child(2) {
+      z-index: 1;
+      transform: scale(2);
+    } 
+  
+  </pre
+    >
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
   </body>
 </html>
