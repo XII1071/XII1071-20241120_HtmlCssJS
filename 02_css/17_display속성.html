@@ -11,46 +11,16 @@
         float: left;
         border: 2px dotted gray;
       }
+
       .outer {
         width: 150px;
         height: 150px;
         background: aqua;
-        text-align: center;
-        display: table-cell;
-        vertical-align: middle;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .outer .box {
-        line-height: 150px;
-      }
-      .outer .inner {
-        width: 50px;
-        height: 50px;
-        background: blue;
-        margin: 0 auto;
-        position: absolute;
-        top: 50px;
-        left: 50px;
       }
 
-      table {
-        display: table;
-        width: 150px;
-        height: 150px;
-        background-color: aqua;
-      }
-      table tr td {
-        display: table-cell;
-        text-align: center;
-        vertical-align: middle;
-      }
-      table tr td > div {
+      .inner {
         width: 50px;
         height: 50px;
-        display: inline-block;
         background: blue;
       }
     </style>
@@ -78,17 +48,23 @@
 
     <fieldset>
       <legend>inline in block</legend>
-      <div class="outer">
-        <span class="box">center</span>
+      <div class="outer" style="text-align: center">
+        <span class="box" style="line-height: 150px">center</span>
       </div>
     </fieldset>
 
     <fieldset>
       <legend>block in table-cell</legend>
-      <table>
+      <table style="display: table" class="outer">
         <tr>
-          <td>
-            <div></div>
+          <td
+            style="
+              display: table-cell;
+              text-align: center;
+              vertical-align: middle;
+            "
+          >
+            <div style="display: inline-block" class="inner"></div>
           </td>
         </tr>
       </table>
@@ -96,27 +72,43 @@
 
     <fieldset>
       <legend>block in block with table-cell, margin 0 auto</legend>
-      <div class="outer">
-        <div class="inner"></div>
+      <div class="outer" style="display: table-cell; vertical-align: middle">
+        <div class="inner" style="margin: 0 auto"></div>
       </div>
     </fieldset>
 
     <fieldset>
       <legend>block in block with position & top, left</legend>
-      <div class="outer">
-        <div class="inner"></div>
+      <div class="outer" style="position: relative">
+        <div
+          class="inner"
+          style="position: absolute; top: 50px; left: 50px"
+        ></div>
       </div>
     </fieldset>
 
     <fieldset>
       <legend>block in block with position & top, left, %</legend>
-      <div class="outer">
-        <div class="inner"></div>
+      <div class="outer" style="position: relative">
+        <div
+          class="inner"
+          style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -25px;
+            margin-top: -25px;
+          "
+        ></div>
       </div>
     </fieldset>
+
     <fieldset>
       <legend>block in block with flex</legend>
-      <div class="outer">
+      <div
+        class="outer"
+        style="display: flex; justify-content: center; align-items: center"
+      >
         <div class="inner"></div>
       </div>
     </fieldset>
