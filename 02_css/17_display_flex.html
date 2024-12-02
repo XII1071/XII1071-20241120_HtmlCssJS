@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      #container1 {
+        background: yellow;
+        border: 2px solid black;
+        border-radius: 5px;
+      }
+
+      .item {
+        background: green;
+        margin: 5px;
+        border: 2px solid black;
+        border-radius: 5px;
+        color: white;
+      }
+    </style>
+    <script>
+      // window.onload = function () {
+      //   container1 = document.querySelector("#container1")
+      //   document.querySelector("#rbBlock").onclick = function () {
+      //     container1.style.display = "block";
+      //   }
+      //   document.querySelector("#rbFlex").onclick = function () {
+      //     container1.style.display = "flex";
+      //   }
+      //   document.querySelector("#rbInlineFlex").onclick = function () {
+      //     container1.style.display = "inline-flex";
+      //   }
+      // }
+
+      // function: 문서가 읽어지는 시점에서 별도의 기억공간에 저장되고 사용되는 시점에서 호출
+      function showFlexBlock(choice) {
+        container1 = document.querySelector("#container1");
+        if (choice == "1") {
+          container1.style.display = "block";
+        } else if (choice == "2") {
+          container1.style.display = "flex";
+        } else if (choice == "3") {
+          container1.style.display = "inline-flex";
+        }
+      }
+      // ()안에 있는 숫자는 매개변수이다.
+    </script>
+  </head>
+
+  <body>
+    <h1>display 속성</h1>
+    <p>flex</p>
+    <hr />
+
+    <fieldset>
+      <legend>container에 display속성을 block, flex, inline-flex로 변경</legend>
+      <p></p>
+      <label for="rbBlock"
+        ><input
+          type="radio"
+          name="grp1"
+          id="rbBlock"
+          checked
+          onclick="showFlexBlock(1)"
+        />block</label
+      >
+      <label for="rbFlex"
+        ><input
+          type="radio"
+          name="grp1"
+          id="rbFlex"
+          onclick="showFlexBlock(2)"
+        />flex</label
+      >
+      <label for="rbInlineFlex"
+        ><input
+          type="radio"
+          name="grp1"
+          id="rbInlineFlex"
+          onclick="showFlexBlock(3)"
+        />inline-flex</label
+      >
+      <div id="container1">
+        <div class="item">aaa <br />aaa</div>
+        <div class="item">bbbbbbbbbb</div>
+        <div class="item">ccccc</div>
+      </div>
+    </fieldset>
+    <!-- <script>
+    container1 = document.querySelector("#container1")
+    document.querySelector("#rbBlock").onclick = function() {
+      container1.style.display = "block";
+    }
+    document.querySelector("#rbFlex").onclick = function() {
+      container1.style.display = "flex";
+    }
+    document.querySelector("#rbInlineFlex").onclick = function() {
+      container1.style.display = "inline-flex";
+    }
+  </script> -->
+  </body>
+</html>
