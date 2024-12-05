@@ -1,43 +1,69 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
-  </head>
-  <body>
-    <h1>자바스크립트 변수</h1>
-    <p>변수의 type</p>
-    <a href="index.html">홈으로</a>
-    <hr />
 
-    <h3>원시 타입 (primitive types :: 실제 값)</h3>
-    <ul>
-      <li>number</li>
-      <li>string</li>
-      <li>boolean</li>
-      <li>undefined</li>
-      <li>null</li>
-      <li>symbol</li>
-      <li>bigInt</li>
-    </ul>
-  </body>
-  <script>
-    score = 10; //정수
-    grade = 0.95; //실수
-    console.log(typeof score);
-    console.log(typeof grade);
-    name = "John";
-    name = "String";
-    name = "";
-    console.log(typeof name);
-    isRight = "true";
-    isCorrect = false;
-    console.log(typeof isRight);
-    console.log(typeof isCorrect);
-    let origin;
-    console.log(typeof origin);
-    name = true;
-    console.log(typeof name); //동적 형지정
-  </script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <h1>자바스크립트 변수</h1>
+  <p>변수의 type</p>
+  <a href="index.html">홈으로</b></a>
+  <hr>
+
+  <h3>원시 타입(Primitive types :: 실제 값)</h3>
+  <ul>
+    <li>number</li>
+    <script>
+      score = 10  // 정수
+      grade = 0.95 // 실수
+      console.log(typeof (score)); console.log(typeof (grade));
+    </script>
+
+    <li>string</li>
+    <script>
+      let name = 'John'; name = "String"; name = ''
+      console.log(typeof (name))
+    </script>
+
+    <li>boolean</li>
+    <script>
+      isRight = true; isCorrect = false;
+      console.log(typeof (isRight)); console.log(typeof (isCorrect))
+    </script>
+
+    <li>undefined</li>
+    <script>
+      let origin  // 변수가 선언만!
+      console.log(origin) // undefined를 출력
+      console.log(typeof (origin)) //선언만 되어 있는 경우 undefined
+    </script>
+
+    <li>null</li>
+    <script>
+      let x = null
+      console.log(typeof(x)) //값은 null(원시값)이지만, typeof는 object로 출력
+    </script>
+
+    <li>symbol</li>
+    <script>
+      let sym = Symbol('hello world')
+      console.log(typeof(sym))
+    </script>
+
+    <li>bigInt</li>
+    <script>
+      let bigNum = 12345678901234567890123456789012345678901234567890123456789n
+      console.log(typeof(bigNum))
+    </script>
+
+    <li>Infinity</li>
+    <script>
+      console.log(Infinity) // 양의 무한대
+    </script>
+  </ul>
+</body>
+
 </html>
