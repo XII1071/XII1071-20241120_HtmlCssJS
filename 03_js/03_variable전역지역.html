@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script>
+      // 변수 선언시 사용되는 제어자 var, let, const
+      console.log(greet); // 변수는 선언했지만 초기화는 되지않음 :: undefined =>
+      //  hoisting 현상 : 밑에서 변수 선언하면 오류생김 위에서 선언하면 상관없음
+      //   console.log(bye); // 변수도 선언안되었고 초기화도 안되어있음 :: not undefined
+
+      var greet = "hello";
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li>var</li>
+      <p>ES5전에도 사용, ES6(2015+) 이후로는 전역변수의 개념으로 사용</p>
+      <p>var 업데이트 가능, 재선언 가능</p>
+      <script>
+        console.log(i); //hoisting
+        console.log(num); //hoisting
+        var num = 10;
+        var num = "hello";
+        console.log(num);
+        function exFunctuon() {
+          //   num2 = "world"; // 외부에서 접근불가
+          var num2 = "world"; // 외부에서 접근불가
+        }
+        // console.log(num2); //에러
+        // console.log(num3); //에러
+        for (var i = 0; i < 5; i++) {
+          //for반복문: 초기값, 조건, 증감
+          console.log(i);
+        }
+        console.log(i); /// var로 선언된 i가 반복문이 종료되고 난 후에도 사용 (closure 현상)
+        // 지역변수는 사라지는데  closure 현상은 지역변수가 살아난다
+        function outer() {
+          let outerVar = "out"; // 지역변수
+
+          function inner() {
+            console.log(outerVar);
+          }
+          return inner;
+        }
+        let fncOuter = outer();
+        fncOuter(); // out 출력됨.  closure 현상
+      </script>
+      <li>let</li>
+      <p>let는 영역(scope)을 가지는 제어자(modifier)</p>
+
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </body>
+</html>
