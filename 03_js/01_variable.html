@@ -4,11 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
+    <script>
+      num1 = 100; //실제 값
+      // alert(num1);
+      // console.log(num1);
+      document.write(num1);
+      window.onload = () => {
+      result = document.querySelector("#result") // 주소 값을 가진 객체(element)
+          result.textContent = `<b>${num1}</b><br>`; //tag가 기호로 인식
+          result.innerHTML = `<b>${num1}</b><br>`; //tag가 tag로 인식
+      };
+    </script>
   </head>
   <body>
-    <h1>자바스크립트 함수</h1>
+    <h1>자바스크립트 변수</h1>
     <p>선언과 명명법</p>
-    <a href="index.html"></a>
+    <a href="index.html">홈으로</a>
     <hr />
+    <p id="result"></p>
+    <p>특수 문장 부호 &nbsp; &gt; &lt; &quot;</p> 
+    <p>특수 문장 부호 &ampnbsp; &ampgt; &amplt; &ampquot;</p> 
+    <p>변수는 선언과 초기화를 통해서 활당된다</p>
+    <p>변수는 초기화 될 떄 타입이 지정된다. 그래서 타입지정이 없다.</p>
+    <p>자바스크립트는 동적 형지정 언어이다.</p>
+    <p>변수 명명법</p>
+    <ol>
+      <li>변수의 이름은 영문자(대소문자)와 숫자, '_' '$'만 사용가능</li>
+      <li>변수의 시작은 반드시 숫자로 시작해서는 안된다.</li>
+      <li>예약어는 사용불가(if,number, string, null, document, ...)</li>
+      <li>변수의 이름은 카멜표기법을 지향한다. (addScore, studuntNum)</li>
+    </ol>
   </body>
 </html>
