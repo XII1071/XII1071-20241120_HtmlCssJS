@@ -5,6 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
+  <script>
+        num5 = "123"
+            console.log(typeof(num5));
+            num5 = 123
+            console.log(typeof(num5));
+  </script>
 </head>
 
 <body>
@@ -64,6 +70,86 @@
       console.log(Infinity) // 양의 무한대
     </script>
   </ul>
+
+  <h3>참조 타입(Reference types :: 주소값)</h3>
+  <ol>
+    <li>object :: 객체</li>
+    <script>
+      let student = {
+        name:'홍길동', age:25, move : function() {console.log('동에번쩍 서에번쩍')}
+      }
+      console.log(student.name)
+      student.move()
+      console.log(typeof(student))
+    </script>
+
+    <li>Array :: 배열</li>
+    <script>
+      class Employee {
+        eno; ename; jumin
+      }
+      let emp1 = new Employee()
+      let emp2 = new Employee()
+      let emp3 = new Employee()
+      emp1.ename = '강지원'
+      console.log(emp1.ename)
+
+      // 하나의 이름으로 같은 타입의 객체를 여러개 선언할 수 있다.
+      let emps = [{eno:0, ename:'jiwon'},{eno:1, ename:'강지원'}]
+      console.log(emps[0].ename)
+
+      let scores = [100, 99, 98, 100]
+      console.log(scores);console.log(typeof(scores));
+    </script>
+
+    <li>DOM, BOM</li>
+    <script>
+      console.log(typeof(document))
+      console.log(typeof(window))
+
+    </script>
+  </ol>
+  <li>function</li>
+  <script>
+    greet = function () {
+        console.log('hello');
+    }
+    console.log(typeof greet);
+    
+  </script>
+
+  <li>내장 객체 :: Date, Math, ...</li>
+  <script>
+    console.log(typeof(new Date()));
+  </script>
+    <ul>
+        <li>묵시적 형 변환 :: Implicit Type Casting</li>
+        <script>
+             a = 5
+            let b = "10"
+            console.log(typeof(a));
+            console.log(typeof(b));
+            console.log(typeof(a+b));
+            console.log(1+2+"3"+4+5);
+           a = a+b
+           console.log(">>>", typeof(a));
+            
+        </script>
+        <li>명시적 형 변환 :: Explicit Type Casting</li>
+        <script>
+             num = "123"
+            console.log(typeof(num));
+            num = Number(num) //명시적인 형변환은 타입을 완전 변경한다.
+            console.log(typeof(num));
+            
+        </script>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+
 </body>
 
 </html>
