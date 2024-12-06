@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <h1>06_condition :: 조건문</h1>
+    <p>if, if, else, else if, 중첩 if, switch case문</p>
+    <a href="index.html">홈으로</a>
+    <hr />
+    <ol>
+      <li>if</li>
+      <p>~라면</p>
+      <pre>
+            if(조건) {
+                명령문
+                명령문
+              }
+        </pre
+      >
+      <script>
+        // if (-1) {
+        //   console.log("조건을 만족!");
+        // }
+        // if (0.1) console.log("조건을 만족!");
+        // let input = prompt("1~100사이의 숫자중 하나를 입력하시오");
+        //     if (input % 2 == 0) {
+        //     console.log('2의 배수!');
+        // }
+        // else{
+        //     console.log('2의 배수가 아님');
+
+        // }
+
+        // if (input % 2 == 0) console.log("2의 배수!");
+        // else console.log("2의 배수가 아님");
+        // console.log(input % 2 == 0 ? "2의 배수!" : "2의 배수가 아님");
+
+        // var input = prompt("여러분이 태어난 월을 입력하세요");
+        // if (input > 5 && input < 10) {
+        //   console.log("당신은 여름에 태어나셨군요");
+        // } else if (input > 9 && input < 12) {
+        //   console.log("당신은 가을에 태어나셨군요");
+        // } else if (input == 12 || input == 1 || input == 2) {
+        //   console.log("당신은 가을에 태어나셨군요");
+        // } else if (input > 3 && input < 6) {
+        //   console.log("당신은 봄에 태어나셨군요");
+        // } else {
+        //   console.log("당신은 사람이 아니군요");
+        // }
+        // var input = prompt("당신의 점수를 입력하세요");
+        // if (input > 90) {
+        //   console.log("천재이시군요 A");
+        // } else if (input > 80) {
+        //   console.log("조금만 노력하세요 B");
+        // } else if (input > 70) {
+        //   console.log("공부해야할거 같아요 C");
+        // } else if (input > 60) {
+        //   console.log("공부에 재능이 없습니다 D");
+        // } else {
+        //   console.log("당신은 사람이 아니군요 F");
+        // }
+      </script>
+      <li>switch case문</li>
+      <p>비연속적인 데이터에 주로 사용</p>
+      <script>
+        var input = prompt("당신이 태어난 월을 입력하세요");
+        var season = "";
+        // input = Number(input);
+        switch (parseInt(input)) {
+          //parseInt : 문자열을 숫자로 바꿈
+          case 3:
+          case 4:
+          case 5:
+            season = "봄";
+            break;
+          case 6:
+          case 7:
+          case 8:
+            season = "여름";
+            break;
+          case 9:
+          case 10:
+            season = "가을";
+            break;
+          default:
+            season = "겨울";
+        }
+        console.log(`당신이 태어난 계절은 ${season}이군요`);
+      </script>
+    </ol>
+  </body>
+</html>

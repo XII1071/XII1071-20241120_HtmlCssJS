@@ -11,16 +11,141 @@
     <a href="index.html">홈으로</a>
     <hr />
     <ol>
-      <li>사칙연산자</li>
+      <li>산출 연산자(Arithmetic Operators)</li>
       <p>+ , - , *, /, %, **</p>
       <script>
-        let result = 5 + 3;
+        let result = 5 + 3; //정수, 문자도 포함
+        result = 5 - 3;
+        result = 5 * 3;
+        result = 5 / 3;
+        result = 5 % 3; // 나머지 연산자만 출력
+        result = 5 ** 3; // 지수 5의3승
         console.log(result);
       </script>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li>비교 연산자(Comparison Operators)</li>
+      <p>==, ===, !=, >, <, >=, <=</p>
+      <p>비교 연산자의 결과값은 ture, false</p>
+      <script>
+        let n1 = "a";
+        let n2 = "b";
+        console.log(n1 == n2); //값을 봄(타입변환이 일어날 수 있음)
+        console.log(n1 === n2); // 값과 타입이 같아야 함.
+        console.log(null == undefined); // true
+        console.log(null == ""); // false
+        console.log(null === undefined); // false
+        console.log(null === ""); // false
+        console.log(n1 != n2); // true
+        console.log(n1 !== n2); // true
+        console.log(n1 > n2); // ascii
+        console.log(n1 < n2); // a < b
+        console.log(n1 <= n2); // a <= b
+        console.log(n1 >= n2); // a >= b
+        console.log(n1.charCodeAt(0)); // ascii a
+        console.log(n2.charCodeAt(0)); // ascii b
+        console.log(String.fromCharCode(48)); // asciicode -> 출력값 : charcode
+        console.log(String.fromCharCode(65)); // asciicode -> 출력값 : charcode
+      </script>
+      <li>논리 연산자</li>
+      <p>true, false에 대한 &&(논리곱)and, ||(논리합)or, !(부정)</p>
+      <p>
+        truthy, falsy 값에 대한 &&, || 연산을 할 경우는 true,false가 아닌 값을
+        반영
+      </p>
+      <p>&&연산자가 ||보다 우선순위가 높다</p>
+      <pre>
+        자바스크립트에서 truthy value
+    1) 0을 제외한 정수와 실수, Infinity, -Infinity
+    2) 빈문자열을 제외한 문자열("0")
+    3) new Date()와 같은 참조형 객체들
+    4) {} 빈 객체, []
+    5) function(){} 
+    6) true
+    7) DOM API에 정의된 객체들(window, document 등등)
+
+    자바스크립트에서 falsy value
+    1) undefined, null
+    2) NaN(Not A Number)
+    3) 0(숫자 리터럴), -0
+    4) ""(빈 문자열) 빈문자열은 false로 인식하지만, 빈 객체({})는 true로 인식함.
+    5) []는 비교연산자를 만나면 '' 또는 ""로 변환되어서 빈문자열로 인식해서 false.
+    6) false
+    7) document.all,  alert()는 값을 반환하지 않으므로 undefined를 반환   
+      </pre>
+      <script>
+        //1. true, false로 논리연산을 할 경우
+        let l1 = 1 < 2; //비교연산자의 결과값은 true, false
+        let l2 = false;
+        console.log(l1 && l2);
+        console.log(l1 && !l2); //!가 붙었기 때문에 false였던것이 true
+        console.log(l1 && !l2 && "A" < "a");
+        // && 논리곱 연산자 3개 이상일 경우는 첫번째 falsy값을 찾으면 그 값을 반영
+        console.log(l1 && !l2);
+        console.log(l1 && !l2 && "A" < "a");
+        // && 논리곱 연산자 3개 이상일 때 모두가 trutsy값을 찾으면 마지막 값을 반영
+
+        // 2. true, false 를 제외한 truthy값과 falsy 값으로 논리곱, 논리합을 할 경우 그 값을 반영
+        console.log(1 && 1 && Infinity);
+
+        // ||논리합 연산자 3개 이상일 경우 첫번째 trutsy값을 찾으면  그 값을 반영, 모두가falsy값이면 그 값을 반영
+        console.log("0" || null || undefined);
+        console.log(0 || null || undefined);
+        console.log(-1 || 0);
+        console.log(-1 && 0);
+        console.log(null || 2 || undefined);
+        console.log(null || 0 || (undefined && 1));
+        console.log(null || -1 || 1);
+        console.log(null || (-1 && 1));
+
+        // 예제
+
+        console.log(false || (0 && "hello"));
+      </script>
+      <li>단항 연산자</li>
+      <p>++, --</p>
+      <p>a++, ++a => a = a + 1 / a--, --a => a= a -1</p>
+      <script>
+        x = 7;
+        y = 3;
+        console.log(x++, ++x + ++y);
+      </script>
+      <li>대입 연산자</li>
+      <p>=, +=, -=, *=,/=, %=, **=</p>
+      <script>
+        z = 1;
+        // z = z + 2;
+        z += 2;
+
+        //똑같은 식
+        z = z + 1;
+        z++, ++z;
+        z += 1;
+        console.log(z);
+        z = 1; //변수를 초기화
+        // z = prompt(
+        //   "숫자를 입력하세요, 숫자를 3으로 나는 몫과 나머지를 출력합니다."
+        // );
+        // alert(`몫은 ${Math.floor(z / 3)} 나머지는 ${z % 3}`); //MAth.floor 는 몫은 출력하고 나머지는 사라짐
+        z = z * 3;
+        z *= 3;
+        z /= 3;
+        z = z / 3;
+      </script>
+      <li>삼항 연산자</li>
+      <p>조건? 참일경우 : 거짓일 경우</p>
+      <script></script>
+      <li>시프트 연산자</li>
+      <p>>>, <<</p>
     </ol>
+    <script>
+      x = 2;
+      x = x << 1;
+      x >>= 4;
+      console.log(x);
+    </script>
+    <li>비트 연산자</li>
+    <p>|, &, ^, ~</p>
+    <script>
+      console.log((x = 2 | 1));
+    </script>
   </body>
 </html>

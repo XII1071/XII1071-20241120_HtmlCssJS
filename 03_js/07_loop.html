@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <h1>loop :: 반복문</h1>
+    <p>for, while, do while, continue, break</p>
+    <a href="index.html">홈으로</a>
+    <hr />
+    <ul>
+      <li>for</li>
+      <p>초기, 조건 증감</p>
+      <script>
+        // for (let i = 1; i <= 9; i++) {
+        //   console.log(`2 x ${i} = ${2 * i}`);
+        //   //   console.log("2 x" + i + "="(2 * i));
+        // }
+        // let step = 3; // step은 1아님. 여러분 생각해보시고 값을 적용하세요
+        // for (let i = 2; i <= 9; i) {
+        //   for (let j = 1; j <= 9; j++) {
+        //     for (let k = 0; k < 3; k++)
+        //       console.log(
+        //         // `${i} x ${i * j} = ${k}`,
+        //         // `${i} x ${j} = ${k}`,
+        //         // `${i} x ${j} = ${k}`
+        //         // `${i} x ${j * k} = ${i * j}`,
+        //         `${i} x ${j}  = ${i * j}`
+        //         // `${i + k} x ${j}  = ${(i + k) * j}`
+        //         // `${i + k} x ${j}  = ${i * j}`
+        //       );
+        //   }
+        // }
+
+        let output = ""; // 출력 결과를 담을 문자열
+
+        for (let i = 2; i <= 9; i += 3) {
+          // 3개의 단씩 묶음
+          for (let j = 1; j <= 9; j++) {
+            // 각 단의 1~9 곱
+            for (let k = 0; k < 3 && i + k <= 9; k++) {
+              // k는 0, 1, 2만 반복하며 범위 제한
+              output += `${i + k} x ${j} = ${(i + k) * j}\t`; // 결과를 누적
+            }
+            output += "\n"; // 한 줄이 끝날 때 줄바꿈 추가
+          }
+          output += "\n"; // 3단 묶음이 끝날 때 빈 줄 추가
+        }
+// output += `${i + 0} x ${j} = ${(i + k) * j}\t` `${i + 1} x ${j} = ${(i + k) * j}\t`
+        console.log(output);
+      </script>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </body>
+</html>
