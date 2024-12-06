@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script>
+      // return이 있는 경우
+      function maxNum(n1, n2) {
+        return n1 > n2 ? n1 : n2;
+      }
+      maxNum(1, 2);
+
+      let a = maxNum(3, 2);
+      console.log(a);
+      console.log(maxNum(3, 2));
+      console.log(3 > 2 ? 3 : 2);
+
+      myFnc(1, 2);
+      // console.log(myFnc2(1,2))
+
+      function myFnc(a, b, ...args) {
+        console.log(">>");
+        console.log(a);
+        console.log(b);
+        console.log(args);
+      }
+      var myFnc2 = function (n1, n2) {
+        return n1 > n2 ? n1 : n2;
+      };
+      console.log(myFnc);
+      console.log(myFnc2);
+    </script>
+  </head>
+  <body>
+    <h1>function</h1>
+    <p>기능의 모음을 함수라 한다. 편리성과 재사용성을 높인다.</p>
+    <ol>
+      <li>함수의 구조</li>
+      <pre>
+        function(매개변수들) {
+            명령1
+            명령2
+            . 
+            . 
+            .
+            return // return이 있거나 없거나
+        }
+      </pre>
+      <li>return이 있는 경우</li>
+      <script>
+        function add(n1, n2, n3) {
+          return n1 + n2 + n3;
+        }
+        console.log(add(1, 2, 3));
+        console.log(add(1, 2)); // 매개변수가 모자랄 경우 숫자와 undefied가 연산을 하면 NaN
+        console.log(add(1)); // NaN
+        console.log(add("Boys", "be"));
+      </script>
+      <li>return이 없는 경우</li>
+      <script>
+        //return이 없는 경우
+        function maxNum(n1, n2) {
+          console.log(n1 > n2 ? n1 : n2);
+        }
+        maxNum(1, 2);
+      </script>
+      <li>매개변수가 규정하지 않을 경우</li>
+      <script>
+        // ... Sqread Operator
+        function myFnc(a, b, ...args) {
+          console.log(a);
+          console.log(b);
+          console.log(args);
+        }
+        myFnc(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        myFnc(true, "hello", "world");
+        myFnc(1, 2);
+      </script>
+      <li>익명 함수</li>
+      <!-- hoisting 이 안된다 -->
+      <script>
+        //함수명이 functuon 뒤에 정의가 안되어 있다.
+        var myFnc2 = function (n1, n2) {
+          return n1 > n2 ? n1 : n2;
+        };
+        console.log(myFnc2(1, 2));
+      </script>
+      <li>일반 함수와 익명 함수의 차이점</li>
+      <p>
+        일반함수는 hoisting이 된다. 그러나, 익명함수는 되지않는다. 그리고,
+        익명함수는 hoisting이 되지않기 때문에 메모리 공간을 구속하지 않는다.
+      </p>
+    </ol>
+  </body>
+</html>

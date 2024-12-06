@@ -14,6 +14,8 @@
     </script>
   </head>
   <body>
+    <h1>자바스크립트 변수</h1>
+    <p>변수의 type</p>
     <ul>
       <li>var</li>
       <p>ES5전에도 사용, ES6(2015+) 이후로는 전역변수의 개념으로 사용</p>
@@ -49,11 +51,38 @@
       </script>
       <li>let</li>
       <p>let는 영역(scope)을 가지는 제어자(modifier)</p>
+      <p>확실하게 중괄호 {} 안에서만 유효</p>
+      <p>업데이트는 되지만, 재선언은 안됨.</p>
+      <script>
+          // console.log(sum);
+          let sum = 0;
+          // let sum = true; // 재선언 불가
+          sum = "hello world";
+          console.log(sum);
 
-      <li></li>
+          for (let j = 0; j < 3; j++) {
+            console.log(j);
+          }
+          // console.log(j); // closure 적용안됨
+      </script>
+      <li>const :: 상수</li>
+      <p>const는 let과 유사한 특장을 공유</p>
+      <p>확실하게 중괄호 {} 안에서만 유효</p>
+      <p>업데이트 불가, 재선언 불가.</p>
+      <script>
+        const PI = 3.14;
+        console.log(PI);
+        // PI = 3.141592;
+      </script>
       <li></li>
       <li></li>
       <li></li>
     </ul>
   </body>
+  <script>
+    greet2("홍길동");
+    function greet2(item) {
+      return "hello" + item;
+    }
+  </script>
 </html>
