@@ -1,61 +1,89 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
-  </head>
-  <body>
-    <h1>배열</h1>
-    <p>같은 이름으로 복수개의 값을 가질 수 있는 변수</p>
-    <a href="index.html">홈으로</a>
-    <hr />
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <h1>배열</h1>
+  <p>같은 이름으로 복수개의 값을 가질 수 있는 변수</p>
+  <a href="index.html">홈으로</b></a>
+  <hr>
+  <script>
+    tot = 0
+    score1 = 97
+    score2 = 89
+    score3 = 100
+    // tot += score1 + score2 + score3
+  </script>
+
+  <ul>
+    <li>배열의 생성</li>
+    <p>배열의 생성 []를 사용한다</p>
     <script>
-      tot = 0;
-      score1 = 97;
-      score2 = 89;
-      score3 = 100;
-      //   tot += score1 + score2 + score3;
+      score = [] // 배열 선언은 되어 있지만 빈 배열
+      score = [97, 89, 77, 91, 100] // 배열 선언과 함께 값 대입
+      score = new Array() // 함수를 이용한 선언
     </script>
 
-    <ul>
-      <li>배열의 생성</li>
-      <p>배열의 생성 []를 사용한다</p>
-      <script>
-        score = []; // 배열 선언은 되어 있지만 빈 배열
-        score = [97, 89, 77, 91, 100]; // 배열 선언과 함께 값 대입
-        score = new Array(); //함수를 이용한 선언
-      </script>
-      <li>배열의 원소 추가</li>
-      <script>
-        // 함수를 이용한 추가
-        //   score.push(82);
-        //   score.push(93);
-        //   score.push(72);
-        //   score.push(90);
+    <li>배열의 원소 추가</li>
+    <p>push(), index로 데이터 추가, splice(index, 추가 내용) </p>
+    <script>
+      // 함수를 이용한 추가
+      // score.push(82);score.push(93);score.push(72);score.push(90);
 
-        //index를 이용한 추가
-        score[0] = 82;
-        score[1] = 93;
-        score[2] = 72;
-        score[3] = 90;
-        console.log(score);
-      </script>
+      // index를 이용한 추가
+      score[0] = 82; score[1] = 93; score[2] = 72; score[3] = 90;
 
-      <li>배열의 접근</li>
-      <script>
-        //index를 이용한 접근
-        for (let i = 0; i < score.length; i++) {
-          console.log(score[i]);
-        }
+      // score.splice(1,0, "A")  // 중간에 데이터 삽입
+      console.log(score)
+    </script>
 
-        score = [];
-        tot += score[0] + score[1] + score[2] + score[3];
-        //index를 이용한 접근
-        for (let i = 0; i < score.length; i++) {
-          console.log(`${tot / score.length}`);
-        }
-      </script>
-    </ul>
-  </body>
+    <li>배열의 접근</li>
+    <script>
+      // index를 이용한 접근
+      tot = 0
+      for (let i = 0; i < score.length; i++) {
+        console.log(score[i])
+        tot += score[i]
+      }
+      console.log(`총점은 ${tot}, 평균은 ${tot / score.length}`)
+    </script>
+
+    <li>배열의 수정</li>
+    <p>인덱스로 수정, splice(시작index, 지워야할 갯수, 변경 내용들...)</p>
+    <script>
+      score[score.length - 1] = 100
+      score.splice(0, 4, 97, 98, 99, 100)
+      console.log(score)
+    </script>
+
+    <li>배열의 삭제</li>
+    <p>delete, splice(시작index, 지워야할 갯수), pop(), shift()</p>
+    <script>
+      delete score[1]
+      score.splice(score.length - 2)
+      score.splice(1, 1) //중간 삭제
+      console.log(score)
+      score=[1,2,3,4,5]
+      score.pop() // 끝 삭제
+      console.log(score)
+      score.shift() // 맨 앞 삭제
+      console.log(score)
+    </script>
+
+    <li>배열 합치기</li>
+    <p>concat</p>
+    <script>
+      var arr1 = [1,2,3]
+      var arr2 = [4,5,6]
+      var arr3 = arr1.concat(arr2)
+      console.log(arr3)
+    </script>
+  </ul>
+</body>
+
 </html>
