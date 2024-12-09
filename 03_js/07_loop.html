@@ -127,20 +127,27 @@
         // 8 * 1 =  8  9 * 1 =  9
         //   ...         ...
         // 8 * 9 = 72  9 * 9 = 81
-
-        let step = 3; // step은 1아님. 여러분 생각해보시고 값을 적용하세요
-        for (let i = 2; i <= 9; i = i + step) {
-          for (let j = 1; j <= 9; j++) {
-            let str= ''
-            for (let k = 0; k <= 2; k++) {
-              if (i + k != 10) str+= `${i+k} * ${j} = ${twoDigit((i+K)*j)} \t`
-                document.write(
-              );
-            }
-            document.log(str);
+        let step = 3 // step은 1아님. 여러분 생각해보시고 값을 적용하세요
+      for (let i = 2; i <= 9; i = i + step) {
+        for (let j = 1; j <= 9; j++) {
+          for (let k=0; k <= 2; k++){
+            if(i+k != 10) document.write(`${i+k} * ${j} = ${twoDigit((i+k)*j)}&nbsp;&nbsp;&nbsp;`)
           }
-          document.log("\n");
+          document.write("<br>")
         }
+        document.write("<br>")
+      }
+
+      for (let i = 2; i <= 9; i = i + step) {
+        for (let j = 1; j <= 9; j++) {
+          let str = ''
+          for (let k=0; k <= 2; k++){
+            if(i+k != 10) str += `${i+k} * ${j} = ${twoDigit((i+k)*j)} \t`
+          }
+          console.log(str)
+        }
+        console.log("\n")
+      }
       </script>
       // </script>
       <li></li>
