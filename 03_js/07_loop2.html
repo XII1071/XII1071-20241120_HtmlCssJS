@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <h1>loop :: 반복문</h1>
+    <p>for, while, do while, continue, break</p>
+    <a href="index.html">홈으로</a>
+    <hr />
+    <ul>
+      <li>for</li>
+      <p>반복문의 3가지 요소 :: 초기, 조건, 증감</p>
+      <script>
+        //변수를 초기화할 떄 명확한 값으로만 이루어짐
+        // let output = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10;
+        tot = 1;
+        for (let i = 1; i < 11; i++) {
+          tot = 2 ** i; //위에서 tot에 선언이 없는데 연산을 해야하니 에러발생
+          console.log(tot);
+        }
+        tot = 1;
+        for (let i = 1; i < 11; i++) {
+          tot = 3 ** i; //위에서 tot에 선언이 없는데 연산을 해야하니 에러발생
+          console.log(tot);
+        }
+        // tot = 0;
+        // for (let i = 1; i < 11; i++) {
+        //   if (i % 2 == 0 || i % 3 == 0) {
+        //     tot = tot + 1;
+        //   }
+        //   console.log(tot);
+        // }
+
+        arr = [];
+        for (let i = 0; i < 10; i++) {
+          arr[i] = i + 1;
+        }
+        console.log(arr);
+      </script>
+    </ul>
+  </body>
+</html>

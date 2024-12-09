@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <h1>loop :: 반복문</h1>
+    <p>for, while, do while, continue, break</p>
+    <a href="index.html">홈으로</a>
+    <hr />
+    <ul>
+      <li>while</li>
+      <p>반복문의 3가지 요소 :: 초기, 조건, 증감</p>
+      <script>
+        tot = 0;
+        i = 0;
+        while (i < 10) {
+          console.log(`${tot + i} = ${tot} + ${i}`);
+          tot += i++;
+        }
+        console.log(tot);
+
+        i = tot = 0;
+        do {
+          console.log(`${tot + i} = ${tot} + ${i}`);
+          tot += i++;
+        } while (i <= 10);
+        console.log(tot);
+      </script>
+    </ul>
+  </body>
+</html>
