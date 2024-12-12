@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+    <script>
+      // document가 읽혀지고 난 뒤에 실행되어야 할 코드 정의
+      window.onload = () => {
+        //256개의 div 만들기
+        var output = "";
+        for (let i = 0; i < 256; i++) {
+          output += "<div></div>";
+        }
+        //256개의 div를 body에 붙이기
+        document.body.innerHTML = output;
+        //256개의 div를 divs 변수에 활당 (배열)
+        divs = document.querySelectorAll("div");
+        //각각의 div에 스타일 주기
+        for (let i = 0; i < divs.length; i++) {
+          divs[i].style.height = "2px";
+          divs[i].style.backgroundColor = `rgb(${i}, ${i}, ${i})`;
+          // css에 background-color가 들어가지만 js는 - 쓰지않고 카멜 표기법으로 사용한다 ex) fontSize
+        }
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

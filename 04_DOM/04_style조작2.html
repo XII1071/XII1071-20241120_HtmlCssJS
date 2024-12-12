@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script>
+      function getStyle() {
+        const greeting = document.querySelector("#greeting");
+        // const color = getComputedStyle(greeting).color;
+        // console.log(color);
+        const bg = getComputedStyle(greeting).background;
+        console.log(bg);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="greeting" style="color: blue; background: yellow">안녕하세요?</div>
+    <input type="button" value="스타일 읽기" onclick="getStyle()" />
+  </body>
+</html>

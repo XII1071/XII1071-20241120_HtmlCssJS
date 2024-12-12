@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script>
+      window.onload = () => {
+        var clock = document.querySelector("#clock");
+        clock.textContent = toDayTime();
+        setInterval(() => {
+          clock.textContent = toDayTime();
+        }, 1000); // 1000 = 1000m/s = 1s
+        var img = document.querySelector("#image");
+        img.src = img.dataset.url + "/300x300";
+        img.setAttribute("src", img.getAttribute("data-url") + "/500x200"); //setAttribute : (매개변수2개), getAttribute : (매개변수 1개)
+        // img.alt = "엑박 방지";
+        img.setAttribute("alt", "엑박 방지"); //setAttribute : (매개변수2개), getAttribute : (매개변수 1개)
+        img.alt = "";
+        img.removeAttribute("alt"); //alt 속성 삭제
+        console.log(img.hasAttribute("alt")); // 속성이 있냐 없냐. 없으면 false
+      };
+      function toDayTime() {
+        today = new Date(); //날짜와 시간을 다루는 객체 생성
+        hour = today.getHours();
+        minute = today.getMinutes();
+        second = today.getSeconds();
+        year = today.getFullYear();
+        month = today.getMonth() + 1; // 출력할때 0~11까지 나오게되면 12가 안나오기때문에 +1을 붙인다.
+        date = today.getDate();
+        return `${year}-${two(month)}-${two(date)} ${two(hour)}:${two(
+          minute
+        )}:${two(second)}`;
+      }
+      function two(num) {
+        return num < 10 ? "0" + num : num;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>속성 조작</h1>
+    <p>textContent, innerHTML</p>
+    <a href="index.html">홈으로</a>
+    <hr />
+    <h1 id="clock"></h1>
+    <img id="image" data-url="https://placehold.co" />
+  </body>
+</html>
