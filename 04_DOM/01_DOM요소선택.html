@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <script>
+    window.onload = function () {
+      subject = document.getElementById("subject")
+      subject.style.background = 'red'
+      subject.onclick = function () {
+        subject.textContent = 'id로 선택하기2'
+      }
+      subject.textContent = 'hello'
+
+      form = document.getElementsByTagName("form")
+      form.onsubmit = function(){
+        alert('submit')
+      }
+      //form.onsubmit()
+
+      titles = document.getElementsByClassName("title")
+      titles[0].style.background = 'yellow'
+      titles[1].style.background = '#123456'
+
+      menu = document.querySelector(".menu")
+      menu.style.background='yellowGreen'
+      menus = document.querySelectorAll(".menu")
+      menus[0].style.background='yellowGreen'
+      menus[1].style.background='green'
+      for(let i=0;i<menus.length;i++) {
+        menus[i].textContent = 'menus querySelectorAll '+i
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <h1>DOM 요소 선택하기 </h1>
+  <p>tag, id, class 단수, 복수</p>
+  <a href="index.html">홈으로</b></a>
+  <hr>
+  <div>
+    <h2 id="subject">id로 선택하기</h2>
+    <h2 class="title">class로 선택하기</h2>
+    <h2 class="title">class로 선택하기</h2>
+    <span class="menu">class로 선택하기</span>
+    <span class="menu">class로 선택하기</span>
+    <form action="" name="frm"></form>
+
+  </div>
+</body>
+
+</html>

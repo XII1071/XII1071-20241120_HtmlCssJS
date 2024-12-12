@@ -13,17 +13,25 @@
     <ul>
       <li>continue</li>
       <script>
-        tot = i = 0
-        let arr = [1, 2, 3, 4, 5, ,7, 8, 9, 10]
-        while (i < 10 ) {
-          i++
-          if (i % 2 == 0) continue
-          tot += arr[i]
+        for (let i = 0; i < 10; i++) {
+          // if (i % 2 == 0) continue;
+          if (i % 2 == 0) break;
+          console.log(i);
+        }
+
+        tot = i = 0;
+        let arr = [1, 2, 3, 4, 5, , 7, 8, 9, 10];
+        while (i < 10) {
+          if (arr[i] % 2 == 0) {
+            i++;
+            // continue; // 짝수일 때는 skip
+            break;
+          } else {
+            tot += arr[i++]; // 홀수일 때는 합치기
+          }
         }
         console.log(tot);
-        
       </script>
-    </ul>
     </ul>
   </body>
 </html>
