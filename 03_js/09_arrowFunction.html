@@ -46,12 +46,41 @@
         var mul = function (action) {
           return a * a;
         };
-        mul = (a) => a * a; // 매개변수가 1개일 경우만ㄴㄴ ()생략 가능
+        mul = (a) => a * a; // 매개변수가 1개일 경우만 ()생략 가능
 
         var hello = function () {
           console.log("hello");
         };
         hello = () => console.log("hello");
+
+        // 중첩 함수의 화살표 함수를 이용한 축약
+        let fnc_inFnc = function (a) {
+          inFnc = function (b) {
+            return a + b;
+          };
+          return inFnc;
+        };
+        fnc_inFnc = (a) => {
+          inFnc = function (b) {
+            return a + b;
+          };
+          return inFnc;
+        };
+        fnc_inFnc = (a) => {
+          inFnc = (b) => {
+            return a + b;
+          };
+          return inFnc;
+        };
+        fnc_inFnc = (a) => {
+          return (b) => {
+            return a + b;
+          };
+        };
+        fnc_inFnc = (a) => {
+          return (b) => a + b;
+        };
+        fnc_inFnc = (a) => (b) => a + b;
       </script>
       <li>return의 유무</li>
       <script>
