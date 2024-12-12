@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>화살표 함수</h1>
+    <p>함수를 축약하여 표시</p>
+    <a href="index.html">홈으로</a>
+    <hr />
+    <ul>
+      <li>일반적 함수</li>
+      <pre>
+            function add (a, b){
+                return a+ b
+            }
+            var fnc = function(){
+                console.log('hello')
+            }
+            var fnc = function(a){
+                return a*a
+            }
+            var fnc = function(a, b){
+               var tmp;
+               if(a > b) tmp =a; else tmp = b
+                return tmp;
+                // return a > b ? a : b
+            }
+        </pre
+      >
+      <li>화살표 함수 :: 매개변수에 따른 변환</li>
+      <!-- hoisting 불가 -->
+      <script>
+        var add = function (a, b) {
+          return a + b;
+        };
+        add = (a, b) => {
+          return a + b;
+        };
+        //매개변수가 2개 이상일 경우나 매개변수가 없을 때 ()생략 불가
+        add = (a, b) => a + b; // 명령이 1개일 경우 중괄호, return 생략
+        console.log(add(1, 1));
+
+        var mul = function (action) {
+          return a * a;
+        };
+        mul = (a) => a * a; // 매개변수가 1개일 경우만ㄴㄴ ()생략 가능
+
+        var hello = function () {
+          console.log("hello");
+        };
+        hello = () => console.log("hello");
+      </script>
+      <li>return의 유무</li>
+      <script>
+        add = function (a, b) {
+          console.log(a + b);
+        };
+
+        add = (a, b) => {
+          console.log(a + b);
+        };
+        add = (a, b) => console.log(a + b);
+        add(1, 1);
+      </script>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </body>
+</html>
