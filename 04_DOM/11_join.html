@@ -65,7 +65,7 @@ gobackBtn(돌아가기 누르면 l0_validationCheck.html로 돌아갈 것) -->
         let birthday = document.querySelector("#birthday");
         let gender = document.querySelector("#male", "female");
         let email = document.querySelector("#email");
-        let formBtn = document.querySelector("form");
+        // let formBtn = document.querySelector("form");
 
         let joinBtn = document.querySelector("#joinBtn");
         let resetBtn = document.querySelector("#resetBtn");
@@ -97,17 +97,15 @@ gobackBtn(돌아가기 누르면 l0_validationCheck.html로 돌아갈 것) -->
             birthday.setAttribute("placeholder", "생년월일을 확인해주세요");
             return;
           }
-          if (gender.value == "") {
-            gender.focus();
-            gender.setAttribute("placeholder", "성별을 확인해주세요");
-            return;
-          }
+
           if (email.value == "") {
             email.focus();
             email.setAttribute("placeholder", "이메일을 확인해주세요");
             return;
           }
+          document.forms["form"].submit();
         };
+
         gobackBtn.addEventListener("click", function () {
           location.href = "10_validationChack.html";
         });
@@ -116,9 +114,9 @@ gobackBtn(돌아가기 누르면 l0_validationCheck.html로 돌아갈 것) -->
   </head>
 
   <body>
-    <form action="10_validationChack.html" method="post" name="frm">
+    <form action="10_validationChack.html" method="get" name="form">
       <fieldset>
-        <legend>Login</legend>
+        <legend>회원가입입</legend>
         <label><span class="fixwidth">ID</span></label>
         <input
           class="ins"
