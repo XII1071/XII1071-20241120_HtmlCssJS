@@ -9,6 +9,20 @@
         let files = document.querySelector('input[type="file"]');
         let maker = document.querySelector("#maker");
         let model = document.querySelector("#model");
+        files.onchange = (e) => {
+          console.log(e.target.files);
+        };
+        let models = [
+          ["Casper", "Grandeur", "Palisade"],
+          ["EV3", "Sorrento", "Seltos"],
+          ["Korando", "Tivoli", "Torres"],
+        ];
+        maker.onchange = () => {
+          //   console.log(maker.options[maker.selectedIndex].value);
+          //   console.log(maker.options[maker.selectedIndex].text);
+          let selectedVal = maker.options[maker.selectedIndex].value;
+          let selectedTxt = maker.options[maker.selectedIndex].text;
+        };
       };
     </script>
   </head>
@@ -17,12 +31,12 @@
     <p>모든 Element(태그)에 적용 가능하나 일부는 번웅 없는 것도 있음</p>
     <a href="index.html">홈으로</a>
     <hr />
-    <input type="file" name="" id="" />
+    <input type="file" multiple />
     <select name="maker" id="maker">
       <option value="">선택하세요</option>
-      <option value="1">현대</option>
-      <option value="2">기아</option>
-      <option value="3">쌍용</option>
+      <option value="0">현대</option>
+      <option value="1">기아</option>
+      <option value="2">쌍용</option>
     </select>
     <select name="model" id="model" style="width: 200px"></select>
   </body>
