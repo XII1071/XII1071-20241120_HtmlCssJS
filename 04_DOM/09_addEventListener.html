@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script>
+      window.onload = () => {
+        console.log("world");
+      };
+      window.onload = defineOnload;
+
+      function defineOnload() {
+        // alert('hello')
+        let newDiv = document.createElement("div");
+        newDiv.style.width = "300px";
+        newDiv.style.height = "300px";
+        newDiv.style.border = "1px solid black";
+
+        // beforebegin :: element앞에
+        // afterbegin :: element 안에가장첫번째child
+        // beforeend :: element안에가장마지막child
+        // afterend :: element 뒤에
+        document.body.insertAdjacentElement("afterbegin", newDiv);
+
+        newDiv.addEventListener("click", (e) => {
+          console.log("world~!");
+        });
+        newDiv.addEventListener("mousemove", (e) => {
+          console.log(e.screenX);
+        });
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
