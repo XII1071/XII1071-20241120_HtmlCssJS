@@ -22,6 +22,12 @@
           //   console.log(maker.options[maker.selectedIndex].text);
           let selectedVal = maker.options[maker.selectedIndex].value;
           let selectedTxt = maker.options[maker.selectedIndex].text;
+          let modelArr = models[selectedVal];
+          let tmp = "";
+          for (let i = 0; i < modelArr.length; i++) {
+            tmp += `<option value=${i}>${modelArr[i]}</option>`;
+          }
+          model.innerHTML = tmp;
         };
       };
     </script>
