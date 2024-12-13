@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script>
+      window.onload = () => {
+        let msgList = document.querySelector("#msgList");
+        let msg = document.querySelector("#msg");
+        msg.focus(); // 커서 깜빡임
+        msg.onkeydown = (e) => {
+          if (e.keyCode == 13) {
+            msgList.append(msg.value + "\n");
+            msgList.scrollTop = msgList.scrollHeight;
+            // 스크롤이 자동으로 따라간다.
+            msg.value = "";
+          }
+          msg.focus();
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <h1>onckeypress</h1>
+    <p>onckeypress, onckeydown, onckeyup</p>
+    <a href="index.html">홈으로</a>
+    <hr />
+    <textarea
+      name="msgList"
+      id="msgList"
+      cols="22"
+      rows="10"
+      readonly
+    ></textarea
+    ><br />
+    <input type="text" name="msg" id="msg" placeholder="Message" />
+  </body>
+</html>
