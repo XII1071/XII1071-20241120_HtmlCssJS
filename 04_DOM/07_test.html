@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script>
+      window.onload = () => {
+        btn = document.querySelector("button");
+        let cnt = 0;
+        btn.onclick = () => {
+          if (cnt < 5) {
+            btn.textContent += "⭐";
+            cnt++;
+          }
+        };
+        removeBtn.onclick = () => {
+          if (cnt > 0) {
+            // 별 개수가 0보다 클 때만 감소
+            stars = addBtn.textContent.split("⭐"); // 현재 별 상태를 배열로 나눔
+            stars.pop(); // 마지막 별 제거
+            addBtn.textContent = stars.join("⭐"); // 별 재조합
+            cnt--;
+          }
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Mouse event</h1>
+    <p>
+      onclick, ondblclick, onmousedown, onmousemove, onmouseout, onmouseover,
+      onmouseup, onmove
+    </p>
+    <a href="index.html">홈으로</a>
+    <hr />
+    <button>별점 -</button>
+    <input type="button" value="⭐" />
+    <hr />
+  </body>
+</html>

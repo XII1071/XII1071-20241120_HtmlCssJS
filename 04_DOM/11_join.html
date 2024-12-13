@@ -1,0 +1,201 @@
+<!-- id, pass, name, mobile, birthday, gender, email
+ joinBtn (회원가입), resetBtn (초기화), 
+gobackBtn(돌아가기 누르면 l0_validationCheck.html로 돌아갈 것) -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      fieldset {
+        display: inline-block;
+        width: 350px;
+        height: 350px;
+        text-align: center;
+        border-radius: 10px;
+        background-color: ghostwhite;
+      }
+
+      .ins {
+        height: 22px;
+        font-size: 12px;
+        width: 160px;
+        padding-left: 5px;
+      }
+
+      .fixwidth {
+        display: inline-block;
+        text-align: left;
+        width: 80px;
+        margin: 10px 0;
+      }
+
+      .regularBtn {
+        display: inline-block;
+        width: 70px;
+        height: 30px;
+        text-align: center;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+      .genderBtn {
+        margin-right: 47px;
+      }
+    </style>
+    <script>
+      window.onload = () => {
+        let id = document.querySelector("#id");
+        let pass = document.querySelector("#pass");
+        let name = document.querySelector("#name");
+        let mobile = document.querySelector("#mobile");
+        let birthday = document.querySelector("#birthday");
+        let gender = document.querySelector("#male", "female");
+        let email = document.querySelector("#email");
+        let formBtn = document.querySelector("form");
+
+        let joinBtn = document.querySelector("#joinBtn");
+        let resetBtn = document.querySelector("#resetBtn");
+        let gobackBtn = document.querySelector("#gobackBtn");
+        joinBtn.onclick = (e) => {
+          e.preventDefault();
+          if (id.value == "") {
+            id.focus();
+            id.setAttribute("placeholder", "ID를 확인해주세요");
+            return;
+          }
+          if (pass.value == "") {
+            pass.focus();
+            pass.setAttribute("placeholder", "Pass를 확인해주세요");
+            return;
+          }
+          if (name.value == "") {
+            name.focus();
+            name.setAttribute("placeholder", "전화번호를 확인해주세요");
+            return;
+          }
+          if (mobile.value == "") {
+            mobile.focus();
+            mobile.setAttribute("placeholder", "전화번호를 확인해주세요");
+            return;
+          }
+          if (birthday.value == "") {
+            birthday.focus();
+            birthday.setAttribute("placeholder", "생년월일을 확인해주세요");
+            return;
+          }
+          if (gender.value == "") {
+            gender.focus();
+            gender.setAttribute("placeholder", "성별을 확인해주세요");
+            return;
+          }
+          if (email.value == "") {
+            email.focus();
+            email.setAttribute("placeholder", "이메일을 확인해주세요");
+            return;
+          }
+        };
+        gobackBtn.addEventListener("click", function () {
+          location.href = "10_validationChack.html";
+        });
+      };
+    </script>
+  </head>
+
+  <body>
+    <form action="10_validationChack.html" method="post" name="frm">
+      <fieldset>
+        <legend>Login</legend>
+        <label><span class="fixwidth">ID</span></label>
+        <input
+          class="ins"
+          type="text"
+          name="id"
+          id="id"
+          placeholder="ID"
+          value=""
+        /><br />
+        <label for="pass"><span class="fixwidth">Password</span></label>
+        <input
+          class="ins"
+          type="password"
+          name="pass"
+          id="pass"
+          placeholder="Password"
+        /><br />
+        <label><span class="fixwidth">Name</span></label>
+        <input
+          class="ins"
+          type="text"
+          name="name"
+          id="name"
+          placeholder="name "
+        /><br />
+        <label><span class="fixwidth">Mobile</span></label>
+        <input
+          class="ins"
+          type="text"
+          name="pass"
+          id="mobile"
+          placeholder="mobile numer"
+        /><br />
+        <label><span class="fixwidth">Birthday</span></label>
+        <input
+          class="ins"
+          type="text"
+          name="Birthday"
+          id="birthday"
+          placeholder="YYYY / MM / DD"
+        /><br />
+        <label><span class="fixwidth">Gender</span></label>
+        <label for="male">남</label>
+        <input
+          class="genderBtn"
+          type="radio"
+          name="gender"
+          id="male"
+          value="남"
+          checked
+        />
+
+        <label for="female">여</label>
+        <input
+          class="genderBtn"
+          type="radio"
+          name="gender"
+          id="female"
+          value="여"
+        /><br />
+        <label><span class="fixwidth">Email</span></label>
+        <input
+          class="ins"
+          type="text"
+          name="email"
+          id="email"
+          placeholder="email"
+        /><br />
+        <input class="regularBtn" type="submit" value="회원가입" id="joinBtn" />
+        <input class="regularBtn" type="reset" value="Reset" id="resetBtn" />
+        <input
+          class="regularBtn"
+          type="button"
+          value="돌아가기"
+          id="gobackBtn"
+        />
+      </fieldset>
+    </form>
+  </body>
+</html>

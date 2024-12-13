@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      fieldset {
+        display: inline-block;
+        width: 250px;
+        height: 170px;
+        text-align: center;
+        border-radius: 10px;
+        background-color: ghostwhite;
+      }
+
+      .ins {
+        height: 22px;
+        font-size: 16px;
+        width: 160px;
+        padding-left: 5px;
+      }
+
+      .fixwidth {
+        display: inline-block;
+        text-align: left;
+        width: 55px;
+        margin: 10px 0;
+      }
+
+      .regularBtn {
+        display: inline-block;
+        width: 70px;
+        height: 30px;
+        text-align: center;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+    </style>
+    <script>
+      window.onload = () => {
+        let id = document.querySelector("#id");
+        let pass = document.querySelector("#pass");
+        let loginBtn = document.querySelector("#loginBtn");
+        let joinBtn = document.querySelector("#joinBtn");
+        loginBtn.onclick = (e) => {
+          e.preventDefault();
+          if (id.value == "") {
+            id.focus();
+            id.setAttribute("placeholder", "ID를 확인해주세요");
+          }
+          if (pass.value == "") {
+            pass.focus();
+            pass.setAttribute("placeholder", "Pass를 확인해주세요");
+          }
+        };
+        joinBtn.addEventListener("click", function () {
+          location.href = "11_join.html";
+        });
+      };
+    </script>
+  </head>
+
+  <body>
+    <form action="10_join.html" method="post" name="frm">
+      <fieldset>
+        <legend>Login</legend>
+        <label><span class="fixwidth">ID</span></label>
+        <input
+          class="ins"
+          type="text"
+          name="id"
+          id="id"
+          placeholder="ID"
+          value=""
+        /><br />
+        <label for="pass"><span class="fixwidth">Pass</span></label>
+        <input
+          class="ins"
+          type="password"
+          name="pass"
+          id="pass"
+          placeholder="Password"
+        /><br />
+        <input class="regularBtn" type="submit" value="로그인" id="loginBtn" />
+        <input class="regularBtn" type="button" value="회원가입" id="joinBtn" />
+        <input class="regularBtn" type="reset" value="Reset" /><br />
+      </fieldset>
+    </form>
+  </body>
+</html>
