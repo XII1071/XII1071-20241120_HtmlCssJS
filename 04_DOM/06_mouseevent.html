@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script>
+      window.onload = () => {
+        btn = document.querySelector("button");
+        // cnt = 0;
+        // btn.onclick = () => {
+        //   if (cnt < 5) {
+        //     btn.textContent += "⭐";
+        //     cnt++;
+        //   }
+        // };
+
+        // 1~5 사이를 왔다 갔다 하는 것
+        cnt = 1; // 별의 갯수
+        step = 1; // 5또는 1이되면 반전시키는 변수ㅈ
+        btn.onclick = () => {
+          btn.textContent += "⭐";
+          let = star = "";
+          for (let i = 0; i < cnt; i++) {
+            star += "⭐";
+          }
+          btn.textContent = "별점 -" + star;
+          cnt += step;
+          console.log(cnt);
+          if (cnt > 4 || cnt < 1) step = step * -1;
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Mouse event</h1>
+    <p>
+      onclick, ondblclick, onmousedown, onmousemove, onmouseout, onmouseover,
+      onmouseup, onmove
+    </p>
+    <a href="index.html">홈으로</a>
+    <hr />
+    <button>별점 -</button>
+    <input type="button" value="⭐" />
+    <hr />
+  </body>
+</html>

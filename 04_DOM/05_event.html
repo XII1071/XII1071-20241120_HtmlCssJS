@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script>
+      window.onload = () => {
+        var aTag = document.querySelector("hr+a");
+        //동위선택자 hr태그 바로 밑에 나오는 a 선택할때 사용
+        console.log(aTag.textContent);
+        aTag.onclick = (event) => {
+          //   event.preventDefault() // 1)href 이벤트만 멈추고 아래코드는 진행
+          //   return false;
+          //2) return false는 이벤트 멈추고, 아래코드 진행 안됨
+          return; //3) 아래코드 진행안되고, href만 진행
+          alert("hello");
+        };
+        let btnSend = document.querySelector("button");
+        btnSend.onclick = function (e) {
+          //   e.preventDefault();
+          alert("hello");
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <h1>event 선언</h1>
+    <p>textContent, innerHTML</p>
+    <a href="index.html">홈으로</a>
+    <hr />
+    <a href="index.html?name=lgh">click</a>
+    <!-- a태그는 get 방식이다. -->
+    <form action="index.html" method="post">
+      <input type="text" name="name" id="name" />
+      <button type="submit">전송</button>
+    </form>
+  </body>
+</html>
