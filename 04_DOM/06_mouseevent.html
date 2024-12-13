@@ -7,41 +7,68 @@
     <script>
       window.onload = () => {
         btn = document.querySelector("button");
-        // cnt = 0;
-        // btn.onclick = () => {
+        // cnt = 0
+        // btn.onclick = function () {
         //   if (cnt < 5) {
-        //     btn.textContent += "⭐";
-        //     cnt++;
+        //     btn.textContent += "⭐"
+        //     cnt++
         //   }
-        // };
+        // }
 
-        // 1~5 사이를 왔다 갔다 하는 것
-        cnt = 1; // 별의 갯수
-        step = 1; // 5또는 1이되면 반전시키는 변수ㅈ
-        btn.onclick = () => {
-          btn.textContent += "⭐";
-          let = star = "";
+        // 1~5사이를 왔다 갔다 하는 것
+        cnt = 1; //별의 갯수
+        step = 1; // 5또는 1이 되면 반전시키는 변수
+        btn.onclick = function () {
+          let star = "";
           for (let i = 0; i < cnt; i++) {
             star += "⭐";
           }
-          btn.textContent = "별점 -" + star;
+          btn.textContent = "별점 - " + star;
           cnt += step;
           console.log(cnt);
           if (cnt > 4 || cnt < 1) step = step * -1;
         };
+        let area = document.querySelector("div");
+        // area.onmouseover = () => {
+        //   area.style.background = "rgb(255,0,0)"
+        //   area.style.cursor = "pointer"
+        // }
+        // area.onmouseout = () => {
+        //   area.style.background = "white"
+        //   area.style.cursor = "pointer"
+        // }
+        // area.onmouseenter = () => {
+        //   area.style.background = "yellow"
+        //   area.style.cursor = "pointer"
+        // }
+        area.onmousemove = (e) => {
+          console.log(`x:${e.screenX} y:${e.screenY}`);
+        };
+
+        //click을 해서 해당개체가 선택될 때
+        area.onmouseup = () => {
+          area.style.background = "yellow";
+          area.style.cursor = "pointer";
+        };
+        area.ondblclick = () => {
+          area.textContent = "clicked";
+        };
+        area.onclick = () => {
+          area.textContent = "";
+        };
       };
     </script>
   </head>
+
   <body>
     <h1>Mouse event</h1>
     <p>
       onclick, ondblclick, onmousedown, onmousemove, onmouseout, onmouseover,
-      onmouseup, onmove
+      onmouseup
     </p>
     <a href="index.html">홈으로</a>
     <hr />
     <button>별점 -</button>
-    <input type="button" value="⭐" />
-    <hr />
+    <div style="width: 300px; height: 300px; border: 1px solid black"></div>
   </body>
 </html>
